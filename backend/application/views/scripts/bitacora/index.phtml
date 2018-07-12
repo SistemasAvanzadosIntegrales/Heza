@@ -1,0 +1,61 @@
+<div class="panel panel-default" style="margin: 5px 0;">
+	<div class="pnl-heading-rojo-1 clearfix">
+		<h3 class="panel-title pull-left">Bit&aacute;cora</h3>
+	</div>
+	<div class="panel-body">
+		<form name="frmFiltrosBitacora" id="frmFiltrosBitacora">
+			<div class="row margin-bottom-3">
+				<div class="col-xs-3">
+					<label for="fusuarioId" class="sr-only">Usuarios</label>
+					<select id="fusuarioId" name="usuario" class="form-control input-sm">
+							echo '<option value="">-- Seleccione --</option>';
+<?php 
+						
+						foreach($this->usuarios as $usuario)
+						{	
+
+							echo '<option value="'.$usuario->id.'">'.$usuario->nombre.'</option>';
+						}
+ ?>
+						<?php// echo $this->usuarios; ?>
+					</select>
+				</div>
+				<div class="col-xs-3">
+					<label for="fmodelo" class="sr-only">M&oacute;dulos</label>
+					<input type="text" id="fmodelo" name="modelo" class="form-control input-sm" placeholder="Buscar por Módulo">		
+				</div>
+				<div class="col-xs-3">
+					<label for="faccion" class="sr-only">Acci&oacute;n</label>
+					<input type="text" id="faccion" name="accion" class="form-control input-sm" placeholder="Acción">               
+				</div>
+				<div class="col-xs-3 text-right">
+					<button class="btn btn-sm btn-default" type="button" onclick="filtrar('frmFiltrosBitacora','/bitacora/grid','/bitacora/imprimir','/bitacora/exportar');">
+						<i class="fa fa-search"></i>
+						&nbsp;Filtrar
+					</button>
+					<button class="btn btn-sm btn-default" type="button" onclick="limpiar('frmFiltrosBitacora','/bitacora/grid');">
+						<i class="fa fa-eraser"></i>
+						&nbsp;Limpiar
+					</button>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-3">
+					<label for="freferencia" class="sr-only">Referencia</label>
+					<input type="text" name="referencia" id="freferencia" class="form-control input-sm" value="" placeholder="Referencia"/>
+				</div>
+				<div class="col-xs-3">
+					<label for="fdesde" class="sr-only">Desde</label>
+					<input type="text" name="desde" id="fdesde" class="form-control input-sm" value="" placeholder="Fecha desde"/>
+				</div>
+				<div class="col-xs-3">
+					<label for="fhasta" class="sr-only">Hasta</label>
+					<input type="text" name="hasta" id="fhasta" class="form-control input-sm" value="" placeholder="Fecha hasta"/>
+				</div>
+				
+			</div>
+		</form>
+	</div>
+</div>
+<div id="flexigrid"></div>
+<div class="height-5"></div>

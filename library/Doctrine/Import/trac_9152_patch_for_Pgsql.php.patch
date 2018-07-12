@@ -1,0 +1,60 @@
+Index: lib/vendor/symfony/lib/plugins/sfDoctrinePlugin/lib/vendor/doctrine/Doctrine/Import/Pgsql.php
+===================================================================
+--- lib/vendor/symfony/lib/plugins/sfDoctrinePlugin/lib/vendor/doctrine/Doctrine/Import/Pgsql.php	(revision 7690)
++++ lib/vendor/symfony/lib/plugins/sfDoctrinePlugin/lib/vendor/doctrine/Doctrine/Import/Pgsql.php	(working copy)
+@@ -94,26 +94,35 @@
+                                                             AND indisprimary != 't'
+                                                         )",
+                         'listTableColumns'     => "SELECT
+-                                                     ordinal_position as attnum,
+-                                                     column_name as field,
+-                                                     udt_name as type,
+-                                                     data_type as complete_type,
+-                                                     t.typtype AS typtype,
+-                                                     is_nullable as isnotnull,
+-                                                     column_default as default,
+-                                                     (
+-                                                       SELECT 't'
+-                                                         FROM pg_index, pg_attribute a, pg_class c, pg_type t
+-                                                         WHERE c.relname = table_name AND a.attname = column_name
+-                                                         AND a.attnum > 0 AND a.attrelid = c.oid AND a.atttypid = t.oid
+-                                                         AND c.oid = pg_index.indrelid AND a.attnum = ANY (pg_index.indkey)
+-                                                         AND pg_index.indisprimary = 't'
+-                                                         AND format_type(a.atttypid, a.atttypmod) NOT LIKE 'information_schema%%'
+-                                                     ) as pri,
+-                                                     character_maximum_length as length
+-                                                   FROM information_schema.COLUMNS
+-                                                   WHERE table_name = %s
+-                                                   ORDER BY ordinal_position",
++                                                        ordinal_position as attnum,
++                                                        column_name as field,
++                                                        udt_name as type,
++                                                        data_type as complete_type,
++                                                        primary_key_information.typtype AS typtype,
++                                                        is_nullable as isnotnull,
++                                                        column_default as default,
++                                                        primary_key_information.isprimary as pri,
++                                                        character_maximum_length as length
++                                                   FROM 
++                                                   	    information_schema.COLUMNS 
++                                                   LEFT JOIN
++                                                        (
++                                                        SELECT 
++                                                             't' as isprimary, c.relname, a.attname, t.typtype
++                                                        FROM
++                                                             pg_index, pg_attribute a, pg_class c, pg_type t
++                                                        WHERE 
++                                                             a.attnum > 0 AND a.attrelid = c.oid AND a.atttypid = t.oid
++                                                             AND c.oid = pg_index.indrelid AND a.attnum = ANY (pg_index.indkey)
++                                                             AND pg_index.indisprimary = 't'
++                                                             AND format_type(a.atttypid, a.atttypmod) NOT LIKE 'information_schema%%'
++                                                        ) AS primary_key_information 
++                                                   ON 
++                                                       (relname = table_name AND attname = column_name)
++                                                   WHERE 
++                                                       table_name = %s
++                                                   ORDER BY
++                                                       ordinal_position",
+                         'listTableRelations'   => "SELECT pg_catalog.pg_get_constraintdef(oid, true) as condef
+                                                           FROM pg_catalog.pg_constraint r
+                                                           WHERE r.conrelid =

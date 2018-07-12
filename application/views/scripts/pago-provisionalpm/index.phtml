@@ -1,0 +1,117 @@
+<div class="panel panel-default" style="margin: 5px 0;">
+	<div class="pnl-heading-rojo-1 clearfix">
+		<h3 class="panel-title pull-left">
+			Pago Provisional PM
+		</h3>
+	</div>
+	
+	<div class="panel-body">
+		<div class="row margin-bottom-3">
+			<form id="frmFiltroPagoProvisionalPm" name="frmFiltroPagoProvisionalPm">
+				<div class="col-xs-3">
+					<label for="fempresa_id" class="sr-only">Empresa</label>
+					<select data-placeholder="Elige una Empresa" class="chosen-select" tabindex="2" name="empresa_id" id="fempresa_id" ></select>
+				</div>
+				<div class="col-xs-3">
+					<label for="fejercicio_id" class="sr-only">Ejercicio</label>
+					<select data-placeholder="Elige un Ejercicio" class="chosen-select" tabindex="2" name="ejercicio_id" id="fejercicio_id" ></select>
+				</div>
+				<div class="col-xs-6 text-right filtros">
+					<a id="btnSearch" class="btn btn-sm btn-default" type="button" onclick="cargaContent('frmFiltroPagoProvisionalPm', '/pago-provisionalpm/imprimir', '/pago-provisionalpm/exportar');" >
+						<i class="fa fa-search"></i>&nbsp;Filtrar
+					</a>
+					<!--
+					<a id="btnImprimir" target="_blank" href="/pago-provisionalpm/imprimir" class="btn btn-sm btn-default" >
+						<i class="fa fa-search"></i>&nbsp;Imprimir
+					</a>
+					-->
+					<a id="btnExportar" target="_blank" onclick="exportar()" class="btn btn-sm btn-success" >
+						<i class="fa fa-eraser"></i>&nbsp;Exportar
+					</a>
+					<div id="btnCongelar" class="dropdown hide" style="display: inline; padding: 6px 0;">
+						<a class="btn btn-sm btn-info dropdown-toggle" type="button" data-toggle="dropdown">
+							&nbsp;Congelar
+							<span class="caret"></span>
+						</a>
+						<ul class="dropdown-menu">
+							<li><a id="period-1" href="#"  data-periodo="1"  data-name="Enero">Enero</a></li>
+							<li><a id="period-2" href="#"  data-periodo="2"  data-name="Febrero">Febrero</a></li>
+							<li><a id="period-3" href="#"  data-periodo="3"  data-name="Marzo">Marzo</a></li>
+							<li><a id="period-4" href="#"  data-periodo="4"  data-name="Abril">Abril</a></li>
+							<li><a id="period-5" href="#"  data-periodo="5"  data-name="Mayo">Mayo</a></li>
+							<li><a id="period-6" href="#"  data-periodo="6"  data-name="Junio">Junio</a></li>
+							<li><a id="period-7" href="#"  data-periodo="7"  data-name="Julio">Julio</a></li>
+							<li><a id="period-8" href="#"  data-periodo="8"  data-name="Agosto">Agosto</a></li>
+							<li><a id="period-9" href="#"  data-periodo="9"  data-name="Septiembre">Septiembre</a></li>
+							<li><a id="period-10" href="#" data-periodo="10" data-name="Octubre">Octubre</a></li>
+							<li><a id="period-11" href="#" data-periodo="11" data-name="Noviembre">Noviembre</a></li>
+							<li><a id="period-12" href="#" data-periodo="12" data-name="Diciembre">Diciembre</a></li>
+						</ul>
+					</div> 
+					<a id="btnSincronizar" href="#" class="btn btn-sm btn-warning hide" >
+						<i class="fa fa-eraser"></i>&nbsp;Sincronizar base de datos
+					</a>
+					<div id="btnAutorizacion" class="dropdown hide" style="display: inline; padding: 6px 0;">
+						<a class="btn btn-sm btn-danger dropdown-toggle" type="button" data-toggle="dropdown">
+							&nbsp;Autorización
+							<span class="caret"></span>
+						</a>
+						<ul class="dropdown-menu">
+							<li><a id="author-1" href="#"  data-periodo="1"  data-name="Enero">Enero</a></li>
+							<li><a id="author-2" href="#"  data-periodo="2"  data-name="Febrero">Febrero</a></li>
+							<li><a id="author-3" href="#"  data-periodo="3"  data-name="Marzo">Marzo</a></li>
+							<li><a id="author-4" href="#"  data-periodo="4"  data-name="Abril">Abril</a></li>
+							<li><a id="author-5" href="#"  data-periodo="5"  data-name="Mayo">Mayo</a></li>
+							<li><a id="author-6" href="#"  data-periodo="6"  data-name="Junio">Junio</a></li>
+							<li><a id="author-7" href="#"  data-periodo="7"  data-name="Julio">Julio</a></li>
+							<li><a id="author-8" href="#"  data-periodo="8"  data-name="Agosto">Agosto</a></li>
+							<li><a id="author-9" href="#"  data-periodo="9"  data-name="Septiembre">Septiembre</a></li>
+							<li><a id="author-10" href="#" data-periodo="10" data-name="Octubre">Octubre</a></li>
+							<li><a id="author-11" href="#" data-periodo="11" data-name="Noviembre">Noviembre</a></li>
+							<li><a id="author-12" href="#" data-periodo="12" data-name="Diciembre">Diciembre</a></li>
+						</ul>
+					</div>
+					
+					<input type="hidden" name="empresa_id" id="id_empresa" value="" />
+					<input type="hidden" name="ejercicio_id" id="id_ejercicio" value="" />
+					<input type="hidden" name="remanente" id="remanente" value="" />
+					
+					<input type="hidden" class="impuestos" name="retencion_salarios_subsidio" id="retencion_salarios_subsidio" value="" />
+					<input type="hidden" class="impuestos" name="ISR_subsidio" id="ISR_subsidio" value="" />
+					<input type="hidden" class="impuestos" name="retencion_asimilados_subsidio" id="retencion_asimilados_subsidio" value="" />
+					<input type="hidden" class="impuestos" name="retencion_isr_arrendamiento_subsidio" id="retencion_isr_arrendamiento_subsidio" value="" />
+					<input type="hidden" class="impuestos" name="retencion_isr_honorarios_subsidio" id="retencion_isr_honorarios_subsidio" value="" />
+					<input type="hidden" class="impuestos" name="retencion_dividendos_subsidio" id="retencion_dividendos_subsidio" value="" />
+					<input type="hidden" class="impuestos" name="retencion_intereses_subsidio" id="retencion_intereses_subsidio" value="" />
+					<input type="hidden" class="impuestos" name="retencion_pagos_extranjero_subsidio" id="retencion_pagos_extranjero_subsidio" value="" />
+					<input type="hidden" class="impuestos" name="retencion_venta_acciones_subsidio" id="retencion_venta_acciones_subsidio" value="" />
+					<input type="hidden" class="impuestos" name="retencion_venta_partes_sociales_subsidio" id="retencion_venta_partes_sociales_subsidio" value="" />
+					<input type="hidden" class="impuestos" name="IVA_subsidio" id="IVA_subsidio" value="" />
+					
+					<input type="hidden" class="impuestos" name="retencion_salarios_compensacion" id="retencion_salarios_compensacion" value="" />
+					<input type="hidden" class="impuestos" name="ISR_compensacion" id="ISR_compensacion" value="" />
+					<input type="hidden" class="impuestos" name="retencion_asimilados_compensacion" id="retencion_asimilados_compensacion" value="" />
+					<input type="hidden" class="impuestos" name="retencion_isr_arrendamiento_compensacion" id="retencion_isr_arrendamiento_compensacion" value="" />
+					<input type="hidden" class="impuestos" name="retencion_isr_honorarios_compensacion" id="retencion_isr_honorarios_compensacion" value="" />
+					<input type="hidden" class="impuestos" name="retencion_dividendos_compensacion" id="retencion_dividendos_compensacion" value="" />
+					<input type="hidden" class="impuestos" name="retencion_intereses_compensacion" id="retencion_intereses_compensacion" value="" />
+					<input type="hidden" class="impuestos" name="retencion_pagos_extranjero_compensacion" id="retencion_pagos_extranjero_compensacion" value="" />
+					<input type="hidden" class="impuestos" name="retencion_venta_acciones_compensacion" id="retencion_venta_acciones_compensacion" value="" />
+					<input type="hidden" class="impuestos" name="retencion_venta_partes_sociales_compensacion" id="retencion_venta_partes_sociales_compensacion" value="" />
+					<input type="hidden" class="impuestos" name="IVA_compensacion" id="IVA_compensacion" value="" />
+				</div>
+			</form>
+		</div>
+	</div>
+	
+	<div id="progressbar" name="progressbar" class="panel-body alert alert-success hide" style="margin: 0 2rem 2rem 2rem" role="alert">
+		Espere un momento, por favor...
+		<div class="progress">
+			<div class="progress-bar progress-bar-success progress-bar-striped active"  role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+				<span class="sr-only">100% Completo</span>
+			</div>
+		</div>
+	</div>
+	
+	<div class="panel-body" id="pagoProvPmContent" style="margin: 0rem 2rem 0rem 2rem;"></div>
+</div>

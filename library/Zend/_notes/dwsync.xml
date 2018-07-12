@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<dwsync>
+<file name="Acl.php" server="sertull.solucionesoftware.com.mx//httpdocs/" local="129960860400000000" remote="129960860400000000" />
+<file name="Application.php" server="sertull.solucionesoftware.com.mx//httpdocs/" local="129960860400000000" remote="129960860400000000" />
+<file name="Auth.php" server="sertull.solucionesoftware.com.mx//httpdocs/" local="129960860400000000" remote="129960860400000000" />
+<file name="Barcode.php" server="sertull.solucionesoftware.com.mx//httpdocs/" local="129960860400000000" remote="129960860400000000" />
+<file name="Cache.php" server="sertull.solucionesoftware.com.mx//httpdocs/" local="129960860400000000" remote="129960860400000000" />
+<file name="Config.php" server="sertull.solucionesoftware.com.mx//httpdocs/" local="129960860400000000" remote="129960860400000000" />
+<file name="Crypt.php" server="sertull.solucionesoftware.com.mx//httpdocs/" local="129960860400000000" remote="129960860400000000" />
+<file name="Currency.php" server="sertull.solucionesoftware.com.mx//httpdocs/" local="129960860400000000" remote="129960860400000000" />
+<file name="Date.php" server="sertull.solucionesoftware.com.mx//httpdocs/" local="129960860400000000" remote="129960860400000000" />
+<file name="Db.php" server="sertull.solucionesoftware.com.mx//httpdocs/" local="129960860400000000" remote="129960860400000000" />
+<file name="Debug.php" server="sertull.solucionesoftware.com.mx//httpdocs/" local="129960860400000000" remote="129960860400000000" />
+<file name="Dojo.php" server="sertull.solucionesoftware.com.mx//httpdocs/" local="129960860400000000" remote="129960860400000000" />
+<file name="Exception.php" server="sertull.solucionesoftware.com.mx//httpdocs/" local="129960861000000000" remote="129960861000000000" />
+<file name="Feed.php" server="sertull.solucionesoftware.com.mx//httpdocs/" local="129960861000000000" remote="129960861000000000" />
+<file name="Filter.php" server="sertull.solucionesoftware.com.mx//httpdocs/" local="129960861000000000" remote="129960861000000000" />
+<file name="Form.php" server="sertull.solucionesoftware.com.mx//httpdocs/" local="129960861000000000" remote="129960861000000000" />
+<file name="Gdata.php" server="sertull.solucionesoftware.com.mx//httpdocs/" local="129960861000000000" remote="129960861000000000" />
+<file name="InfoCard.php" server="sertull.solucionesoftware.com.mx//httpdocs/" local="129960861000000000" remote="129960861000000000" />
+<file name="Json.php" server="sertull.solucionesoftware.com.mx//httpdocs/" local="129960861000000000" remote="129960861000000000" />
+<file name="Layout.php" server="sertull.solucionesoftware.com.mx//httpdocs/" local="129960861000000000" remote="129960861000000000" />
+<file name="Ldap.php" server="sertull.solucionesoftware.com.mx//httpdocs/" local="129960861000000000" remote="129960861000000000" />
+<file name="Loader.php" server="sertull.solucionesoftware.com.mx//httpdocs/" local="129960861000000000" remote="129960861000000000" />
+<file name="Locale.php" server="sertull.solucionesoftware.com.mx//httpdocs/" local="129960861000000000" remote="129960861000000000" />
+<file name="Log.php" server="sertull.solucionesoftware.com.mx//httpdocs/" local="129960861000000000" remote="129960861000000000" />
+<file name="Mail.php" server="sertull.solucionesoftware.com.mx//httpdocs/" local="129960861000000000" remote="129960861000000000" />
+<file name="Markup.php" server="sertull.solucionesoftware.com.mx//httpdocs/" local="129960861000000000" remote="129960861000000000" />
+<file name="Memory.php" server="sertull.solucionesoftware.com.mx//httpdocs/" local="129960860400000000" remote="129960860400000000" />
+<file name="Mime.php" server="sertull.solucionesoftware.com.mx//httpdocs/" local="129960860400000000" remote="129960860400000000" />
+<file name="Navigation.php" server="sertull.solucionesoftware.com.mx//httpdocs/" local="129960860400000000" remote="129960860400000000" />
+<file name="Oauth.php" server="sertull.solucionesoftware.com.mx//httpdocs/" local="129960860400000000" remote="129960860400000000" />
+<file name="OpenId.php" server="sertull.solucionesoftware.com.mx//httpdocs/" local="129960860400000000" remote="129960860400000000" />
+<file name="Paginator.php" server="sertull.solucionesoftware.com.mx//httpdocs/" local="129960860400000000" remote="129960860400000000" />
+<file name="Pdf.php" server="sertull.solucionesoftware.com.mx//httpdocs/" local="129960860400000000" remote="129960860400000000" />
+<file name="ProgressBar.php" server="sertull.solucionesoftware.com.mx//httpdocs/" local="129960860400000000" remote="129960860400000000" />
+<file name="Queue.php" server="sertull.solucionesoftware.com.mx//httpdocs/" local="129960860400000000" remote="129960860400000000" />
+<file name="Registry.php" server="sertull.solucionesoftware.com.mx//httpdocs/" local="129960860400000000" remote="129960860400000000" />
+<file name="Serializer.php" server="sertull.solucionesoftware.com.mx//httpdocs/" local="129960860400000000" remote="129960860400000000" />
+</dwsync>

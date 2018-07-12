@@ -1,0 +1,112 @@
+<div class="panel panel-default" style="margin: 5px 0;">
+  <div class="pnl-heading-rojo-1 clearfix"><h3 class="panel-title pull-left">Tipos de Empresas</h3></div>
+    
+    <div class="panel-body">
+        <div class="row margin-bottom-3">
+            <form id="frmFiltroTipoEmpresa" name="frmFiltroTipoEmpresa">
+                
+                <div class="col-xs-3">
+                    <label for="ftipo_empresa" class="sr-only">Tipo de empresa</label>
+                    <input type="text" name="tipo_empresa" id="ftipo_empresa" class="form-control input-sm" value="" placeholder="Tipo de empresa"/>
+                </div>
+
+                <!--<div class="col-xs-3">
+                    <label for="ftipo_calculo" class="sr-only">Tipo de calculo</label>
+                    <input type="text" name="tipo_calculo" id="ftipo_calculo" class="form-control input-sm" value="" placeholder="Tipo de calculo"/>
+                </div>-->
+
+                <div class="col-xs-3">
+                    <label for="ftipo_calculo" class="sr-only">Tipo de calculo</label>
+                    <select id="ftipo_calculo" name="tipo_calculo" class="form-control input-sm">
+                        <option value="" selected>- Todos los tipos -</option>
+                        <option value="1">SA</option>
+                        <option value="2">SC</option>
+                    </select>
+                </div>
+
+                <div class="col-xs-6 text-right">
+                    <a class="btn btn-sm btn-default" type="button" onclick="filtrar('frmFiltroTipoEmpresa','/tipo-empresa/grid','/tipo-empresa/imprimir','/tipo-empresa/exportar');">
+                        <i class="fa fa-search"></i>&nbsp;Filtrar
+                    </a>
+                    <a class="btn btn-sm btn-default" type="button" onclick="limpiar('frmFiltroTipoEmpresa','/tipo-empresa/grid');">
+                        <i class="fa fa-eraser"></i>&nbsp;Limpiar
+                    </a>
+                    <a id="btnImprimir" target="_blank" href="/tipo-empresa/imprimir" class="btn btn-sm btn-default" >
+                        <i class="fa fa-search"></i>&nbsp;Imprimir
+                    </a>
+                    <a id="btnExportar" target="_blank" href="/tipo-empresa/exportar" class="btn btn-sm btn-default"  >
+                        <i class="fa fa-eraser"></i>&nbsp;Exportar
+                    </a>        
+                </div>
+            </form>
+        </div>        
+    </div> 
+      <form id="frmTipoEmpresa" name="frmTipoEmpresa" method="post" action="/tipo-empresa/guardar" role="form">
+        <div class="panel-body">
+            <div class="row margin-bottom-3">
+                <div class="col-xs-7 sinMargin">
+                    <div class="pnl-heading-rojo-1 clearfix"><h3 class="panel-title text-center">Tipos de Empresas</h3></div>
+                    <div id="flexigrid"></div>
+                </div>
+                
+                <div class="col-xs-5 sinPaddingLeft">
+                    <div class="panel panel-default" >
+                        <div class="pnl-heading-rojo-1 clearfix">
+                            <h3 class="panel-title pull-left">Alta / Edición de Tipos de Empresas</h3>
+                        </div>
+                        <div class="panel-body">
+                            <div class="row margin-bottom-3">
+                                <div class="col-xs-12 form-group"> 
+                                    <label for="ftipo_empresa" class="col-xs-4 control-label" style="padding: 0px;"><span class="naranja">*</span>Tipo de empresa:</label>
+                                    <div class="col-xs-8 sinPaddingRight">
+                                        <input type="text" id="tipo_empresa" name="tipo_empresa" class="form-control input-sm required" value=""  maxlength="100" placeholder="Tipo de empresa" />
+                                    </div>
+                                </div>
+
+                                <div class="col-xs-12 form-group"> 
+                                    <label for="ftipo_calculo" class="col-xs-4 control-label" style="padding: 0px;"><span class="naranja">*</span>Tipo de calculo:</label>
+                                        <input type="radio" name="tipo_calculo" id="select_tipo_calculo1" value="1">SA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <input type="radio" name="tipo_calculo" id="select_tipo_calculo2" value="2">SC
+                                    </div>
+
+                                </div>
+
+                                <div class="col-xs-12 form-group"> 
+                                    <label for="fstatus" class="col-xs-4 control-label" style="padding: 0px;"><span class="naranja">*</span>Estatus:</label>
+                                    <div class="col-xs-8 sinPaddingRight">
+                                        <select id="status" name="status" class="form-control required" <?php echo($this->puedeAgregar?"":'disabled="disabled"'); ?>">
+                                            <option value="1">Activo</option>
+                                            <option value="0">Inactivo</option>
+                                        </select>
+                                    </div>
+                                 </div>
+                            
+ 
+                            <div class="row sinMargin text-center">
+                                <div class="col-xs-4 text-center mt40px">
+                                    <button type="button" onclick="guardar('frmTipoEmpresa','/tipo-empresa/grid','/tipo-empresa/imprimir','/tipo-empresa/exportar');" class="col-xs-12 btn btn-success marginLat5p <?php echo(($this->puedeAgregar)?"":"hide"); ?>">
+                                        <i class="fa fa-floppy-o"></i>&nbsp;Guardar
+                                    </button>
+                                </div>
+                                    
+                                <div class="col-xs-4 text-center mt40px"> 
+                                    <button type="button" onclick="limpiarfrmTipoEmpresa()" class="col-xs-12 btn btn-primary marginLat5p <?php echo(($this->puedeAgregar)?'':'hide'); ?>">
+                                        <i class="fa fa-eraser"></i>&nbsp;Limpiar
+                                    </button>
+                                </div>
+
+                                <div class="col-xs-4 text-center mt40px">
+                                    <a onclick="eliminar('','1');" id="eliminar" class="col-xs-12 btn btn-danger  marginLat5p <?php echo(($this->puedeEliminar)?'':'hide'); ?>">
+                                        <i class="fa fa-times"></i>&nbsp;Eliminar
+                                    </a>
+                                </div>
+                                <input type="hidden" name="id" id="id" value="" />
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+             </div>     
+            </div>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,48 @@
+<div class="panel panel-default" style="margin: 5px 0;">
+	
+	<div class="pnl-heading-rojo-1 clearfix">
+		<h3 class="panel-title pull-left">Usuarios</h3>
+		<button type="button" onclick="agregar('/usuario/agregar', 0, 'frm-1');" class="btn btn-sm btn-default pull-right <?php echo($this->puedeAgregar ? "" : "hide"); ?>">
+			<i class="fa fa-plus"></i>&nbsp;Agregar
+		</button>
+	</div>
+	
+	<div class="panel-body">
+		<form name="frmFiltrosUsuario" id="frmFiltrosUsuario">
+			
+			<div class="row margin-bottom-3">
+				<div class="col-xs-3">
+					<label for="fnombre" class="sr-only">Nombre</label>
+					<input type="text" name="nombre" id="fnombre" class="form-control input-sm" value="" placeholder="Buscar"/>
+				</div>
+				
+				<div class="col-xs-3">
+					<label for="fstatus" class="sr-only">Estatus</label>
+					<select id="fstatus" name="status" class="form-control input-sm">
+						<option value="">- Todos los estatus -</option>
+						<option value="1" selected>Habilitado</option>
+						<option value="0">Deshabilitado</option>
+					</select>
+				</div>
+				
+				<div class="col-xs-4 col-xs-offset-2 text-right">
+					<button class="btn btn-sm btn-default" type="button" onclick="filtrar('frmFiltrosUsuario','/usuario/grid','/usuario/imprimir','/usuario/exportar');">
+						<i class="fa fa-search"></i>&nbsp;Filtrar
+					</button>
+					<button class="btn btn-sm btn-default" type="button" onclick="limpiar('frmFiltrosUsuario','/usuario/grid');">
+						<i class="fa fa-eraser"></i>&nbsp;Limpiar
+					</button>
+					<a id="btnImprimir" target="_blank" href="/usuario/imprimir" class="btn btn-sm btn-default" >
+						<i class="fa fa-search"></i>&nbsp;Imprimir
+					</a>
+					<a id="btnExportar" target="_blank" href="/usuario/exportar" class="btn btn-sm btn-default"  >
+						<i class="fa fa-eraser"></i>&nbsp;Exportar
+					</a>        
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+
+<div id="flexigrid"></div>
+<div class="height-5"></div>

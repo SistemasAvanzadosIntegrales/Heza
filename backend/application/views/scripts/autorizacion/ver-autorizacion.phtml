@@ -1,0 +1,31 @@
+<form id="frm-check" name="frm-check" class="form-horizontal" method="post" action="/autorizacion/guardar-autorizacion" role="form">
+	<div class="card">
+		<div class="card-block">
+			<table style="width: 100%;">
+				<thead>
+					<th class="text-center col-xs-2">Nombre</th>
+					<th class="text-center col-xs-2">¿Aceptar?</th>
+					<th class="text-center col-xs-8">Comentarios</th>
+				</thead>
+				<tbody>
+					<tr>
+						<td class="text-center col-xs-2">
+							<?php echo $this->nombre; ?>
+						</td>
+						<td class="text-center col-xs-2">
+							<select name="respuesta" id="respuesta" class="form-control input-sm required">
+								<option value="1">Aceptar</option>
+								<option value="2">Rechazar</option>
+							</select>
+						</td>
+						<td class="text-center col-xs-8">
+							<input name="comentarios" id="comentarios" type="text" class="form-control input-sm required" value="">
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	
+	<input type="hidden" name="id" id="id" value="<?php echo $this->autorizacion; ?>" />
+</form>

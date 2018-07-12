@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<dwsync>
+<file name="AddConferenceTemplateParticipantResponse.php" server="solucionesoftware.com.mx/httpdocs/" local="129640542600000000" remote="129640542600000000" />
+<file name="AddConferenceTemplateParticipantResponseType.php" server="solucionesoftware.com.mx/httpdocs/" local="129640542600000000" remote="129640542600000000" />
+<file name="CCSResponseType.php" server="solucionesoftware.com.mx/httpdocs/" local="129640542600000000" remote="129640542600000000" />
+<file name="CommitConferenceResponse.php" server="solucionesoftware.com.mx/httpdocs/" local="129640542600000000" remote="129640542600000000" />
+<file name="ConferenceCallAbstract.php" server="solucionesoftware.com.mx/httpdocs/" local="129640542600000000" remote="129640542600000000" />
+<file name="CreateConferenceResponse.php" server="solucionesoftware.com.mx/httpdocs/" local="129640542600000000" remote="129640542600000000" />
+<file name="CreateConferenceResponseType.php" server="solucionesoftware.com.mx/httpdocs/" local="129640542600000000" remote="129640542600000000" />
+<file name="CreateConferenceTemplateResponse.php" server="solucionesoftware.com.mx/httpdocs/" local="129640542600000000" remote="129640542600000000" />
+<file name="CreateConferenceTemplateResponseType.php" server="solucionesoftware.com.mx/httpdocs/" local="129640542600000000" remote="129640542600000000" />
+<file name="GetConferenceListResponse.php" server="solucionesoftware.com.mx/httpdocs/" local="129640542600000000" remote="129640542600000000" />
+<file name="GetConferenceListResponseType.php" server="solucionesoftware.com.mx/httpdocs/" local="129640542600000000" remote="129640542600000000" />
+<file name="GetConferenceStatusResponse.php" server="solucionesoftware.com.mx/httpdocs/" local="129640542600000000" remote="129640542600000000" />
+<file name="GetConferenceStatusResponseType.php" server="solucionesoftware.com.mx/httpdocs/" local="129640542600000000" remote="129640542600000000" />
+<file name="GetConferenceTemplateListResponse.php" server="solucionesoftware.com.mx/httpdocs/" local="129640542600000000" remote="129640542600000000" />
+<file name="GetConferenceTemplateListResponseType.php" server="solucionesoftware.com.mx/httpdocs/" local="129640542600000000" remote="129640542600000000" />
+<file name="GetConferenceTemplateParticipantResponse.php" server="solucionesoftware.com.mx/httpdocs/" local="129640542600000000" remote="129640542600000000" />
+<file name="GetConferenceTemplateParticipantResponseType.php" server="solucionesoftware.com.mx/httpdocs/" local="129640542600000000" remote="129640542600000000" />
+<file name="GetConferenceTemplateResponse.php" server="solucionesoftware.com.mx/httpdocs/" local="129640542600000000" remote="129640542600000000" />
+<file name="GetConferenceTemplateResponseType.php" server="solucionesoftware.com.mx/httpdocs/" local="129640542600000000" remote="129640542600000000" />
+<file name="GetParticipantStatusResponse.php" server="solucionesoftware.com.mx/httpdocs/" local="129640542600000000" remote="129640542600000000" />
+<file name="GetParticipantStatusResponseType.php" server="solucionesoftware.com.mx/httpdocs/" local="129640542600000000" remote="129640542600000000" />
+<file name="GetRunningConferenceResponse.php" server="solucionesoftware.com.mx/httpdocs/" local="129640542600000000" remote="129640542600000000" />
+<file name="GetRunningConferenceResponseType.php" server="solucionesoftware.com.mx/httpdocs/" local="129640542600000000" remote="129640542600000000" />
+<file name="NewParticipantResponse.php" server="solucionesoftware.com.mx/httpdocs/" local="129640542600000000" remote="129640542600000000" />
+<file name="NewParticipantResponseType.php" server="solucionesoftware.com.mx/httpdocs/" local="129640542600000000" remote="129640542600000000" />
+<file name="RemoveConferenceResponse.php" server="solucionesoftware.com.mx/httpdocs/" local="129640542600000000" remote="129640542600000000" />
+<file name="RemoveConferenceTemplateParticipantResponse.php" server="solucionesoftware.com.mx/httpdocs/" local="129640542600000000" remote="129640542600000000" />
+<file name="RemoveConferenceTemplateResponse.php" server="solucionesoftware.com.mx/httpdocs/" local="129640542600000000" remote="129640542600000000" />
+<file name="RemoveParticipantResponse.php" server="solucionesoftware.com.mx/httpdocs/" local="129640542600000000" remote="129640542600000000" />
+<file name="UpdateConferenceResponse.php" server="solucionesoftware.com.mx/httpdocs/" local="129640542600000000" remote="129640542600000000" />
+<file name="UpdateConferenceTemplateParticipantResponse.php" server="solucionesoftware.com.mx/httpdocs/" local="129640542600000000" remote="129640542600000000" />
+<file name="UpdateConferenceTemplateResponse.php" server="solucionesoftware.com.mx/httpdocs/" local="129640542600000000" remote="129640542600000000" />
+<file name="UpdateParticipantResponse.php" server="solucionesoftware.com.mx/httpdocs/" local="129640542600000000" remote="129640542600000000" />
+</dwsync>

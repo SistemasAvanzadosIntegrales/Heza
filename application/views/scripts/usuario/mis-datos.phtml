@@ -1,0 +1,49 @@
+<div id="es-1" name="es-1" class="alert alert-success hide" style="padding-bottom: 0;" role="alert">
+	Espere un momento, por favor...
+	<div class="progress">
+		<div class="progress-bar progress-bar-success progress-bar-striped active"  role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+			<span class="sr-only">100% Completo</span>
+		</div>
+	</div>
+</div>
+<form id="frm-1" name="frm-1" class="form-horizontal" method="post" action="/usuario/guardar-usuario" role="form">
+	
+    <div class="form-group">
+        <label for="nombre" class="control-label">*Usuario: <?php echo $this->registro->nombre ?></label>
+    </div>
+    
+    <div class="form-group">
+        <label for="correo_electronico" class="control-label">*Correo electr&oacute;nico:</label>
+        <div class="col-xs-12 sinPadding">
+            <input type="text" id="correo_electronico" name="correo_electronico" class="col-xs-8 form-control input-sm required email" value="<?php echo $this->registro->correo_electronico ?>"  maxlength="50" placeholder="Correo electr&oacute;nico" />
+        </div>
+    </div>
+    
+    <div class="form-group">
+            <label for="contrasena" class="control-label">*Cambiar Contraseña:</label>
+            <div class="col-xs-12 sinPadding">
+                <input type="text" id="contrasena" name="contrasena" class="form-control input-sm required" value="<?php echo $this->registro->contrasena ?>" maxlength="10" placeholder="Contrasena" />
+            </div>
+        
+            <br>
+            <label for="contrasena" class="control-label">*Validar Contraseña:</label>
+            <div class="col-xs-12 sinPadding">
+                <input type="text" id="confirmar" name="confirmar" class="form-control input-sm required" value="<?php echo $this->registro->contrasena ?>" maxlength="10" placeholder="Contrasena" />
+            </div>
+
+    </div>
+    
+    
+    <input type="hidden" name="id" id="id" value="<?php echo $this->registro->id; ?>" />
+    
+     <br>    
+    
+    <div class="text-right"> 
+    <input type="hidden" name="id" id="id" value="<?php echo $this->registro->id; ?>" /> <!-- cuando no es nuevo -->
+        <button class="btn btn-rojo-1" onclick="guardar_usuario();" type="button" ><i class="fa fa-check-circle"></i> Aceptar</button>
+        <button class="btn btn-rojo-1" onclick="cancelar();" type="button" ><i class="fa fa-times-circle"></i> Cancelar</button>
+    </div>
+    <br/><br/>
+    
+    
+</form>

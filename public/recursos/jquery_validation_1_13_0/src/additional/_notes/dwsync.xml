@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<dwsync>
+<file name="accept.js" server="ypsilon.solucionesoftware.com.mx//httpdocs/" local="130689381302386749" remote="130723954800000000" />
+<file name="additional.js" server="ypsilon.solucionesoftware.com.mx//httpdocs/" local="130689381308227083" remote="130723954800000000" />
+<file name="alphanumeric.js" server="ypsilon.solucionesoftware.com.mx//httpdocs/" local="130689381107875624" remote="130723954800000000" />
+<file name="bankaccountNL.js" server="ypsilon.solucionesoftware.com.mx//httpdocs/" local="130689381299576588" remote="130723954800000000" />
+<file name="bankorgiroaccountNL.js" server="ypsilon.solucionesoftware.com.mx//httpdocs/" local="130689381303686824" remote="130723955400000000" />
+<file name="bic.js" server="ypsilon.solucionesoftware.com.mx//httpdocs/" local="130689381122396454" remote="130723955400000000" />
+<file name="cifES.js" server="ypsilon.solucionesoftware.com.mx//httpdocs/" local="130689381282585617" remote="130723955400000000" />
+<file name="creditcardtypes.js" server="ypsilon.solucionesoftware.com.mx//httpdocs/" local="130689381228432519" remote="130723955400000000" />
+<file name="currency.js" server="ypsilon.solucionesoftware.com.mx//httpdocs/" local="130689381295376348" remote="130723955400000000" />
+<file name="dateFA.js" server="ypsilon.solucionesoftware.com.mx//httpdocs/" local="130689381349699455" remote="130723955400000000" />
+<file name="dateITA.js" server="ypsilon.solucionesoftware.com.mx//httpdocs/" local="130689381312577332" remote="130723955400000000" />
+<file name="dateNL.js" server="ypsilon.solucionesoftware.com.mx//httpdocs/" local="130689381291276114" remote="130723955400000000" />
+<file name="extension.js" server="ypsilon.solucionesoftware.com.mx//httpdocs/" local="130689381329508300" remote="130723955400000000" />
+<file name="giroaccountNL.js" server="ypsilon.solucionesoftware.com.mx//httpdocs/" local="130689381354799747" remote="130723955400000000" />
+<file name="iban.js" server="ypsilon.solucionesoftware.com.mx//httpdocs/" local="130689381127186728" remote="130723955400000000" />
+<file name="integer.js" server="ypsilon.solucionesoftware.com.mx//httpdocs/" local="130689381344029131" remote="130723955400000000" />
+<file name="ipv4.js" server="ypsilon.solucionesoftware.com.mx//httpdocs/" local="130689381329498300" remote="130723955400000000" />
+<file name="ipv6.js" server="ypsilon.solucionesoftware.com.mx//httpdocs/" local="130689381292476182" remote="130723955400000000" />
+<file name="lettersonly.js" server="ypsilon.solucionesoftware.com.mx//httpdocs/" local="130689381137067293" remote="130723955400000000" />
+<file name="letterswithbasicpunc.js" server="ypsilon.solucionesoftware.com.mx//httpdocs/" local="130689381316907580" remote="130723955400000000" />
+<file name="mobileNL.js" server="ypsilon.solucionesoftware.com.mx//httpdocs/" local="130689381312177309" remote="130723955400000000" />
+<file name="mobileUK.js" server="ypsilon.solucionesoftware.com.mx//httpdocs/" local="130689381317127592" remote="130723955400000000" />
+<file name="nieES.js" server="ypsilon.solucionesoftware.com.mx//httpdocs/" local="130689381174939460" remote="130723955400000000" />
+<file name="nifES.js" server="ypsilon.solucionesoftware.com.mx//httpdocs/" local="130689381131977002" remote="130723955400000000" />
+<file name="nowhitespace.js" server="ypsilon.solucionesoftware.com.mx//httpdocs/" local="130689381287645906" remote="130723955400000000" />
+<file name="pattern.js" server="ypsilon.solucionesoftware.com.mx//httpdocs/" local="130689381180099755" remote="130723955400000000" />
+<file name="phoneNL.js" server="ypsilon.solucionesoftware.com.mx//httpdocs/" local="130689381112725901" remote="130723955400000000" />
+<file name="phonesUK.js" server="ypsilon.solucionesoftware.com.mx//httpdocs/" local="130689381307067017" remote="130723955400000000" />
+<file name="phoneUK.js" server="ypsilon.solucionesoftware.com.mx//httpdocs/" local="130689381277555329" remote="130723955400000000" />
+<file name="phoneUS.js" server="ypsilon.solucionesoftware.com.mx//httpdocs/" local="130689381297286457" remote="130723955400000000" />
+<file name="postalCodeCA.js" server="ypsilon.solucionesoftware.com.mx//httpdocs/" local="130689381272475038" remote="130723955400000000" />
+<file name="postalcodeIT.js" server="ypsilon.solucionesoftware.com.mx//httpdocs/" local="130689381218171932" remote="130723955400000000" />
+<file name="postalcodeNL.js" server="ypsilon.solucionesoftware.com.mx//httpdocs/" local="130689381117596180" remote="130723955400000000" />
+<file name="postcodeUK.js" server="ypsilon.solucionesoftware.com.mx//httpdocs/" local="130689381325458069" remote="130723955400000000" />
+<file name="require_from_group.js" server="ypsilon.solucionesoftware.com.mx//httpdocs/" local="130689381324858034" remote="130723955400000000" />
+<file name="skip_or_fill_minimum.js" server="ypsilon.solucionesoftware.com.mx//httpdocs/" local="130689381141817565" remote="130723955400000000" />
+<file name="statesUS.js" server="ypsilon.solucionesoftware.com.mx//httpdocs/" local="130689381338948840" remote="130723955400000000" />
+<file name="strippedminlength.js" server="ypsilon.solucionesoftware.com.mx//httpdocs/" local="130689381334258572" remote="130723955400000000" />
+<file name="time.js" server="ypsilon.solucionesoftware.com.mx//httpdocs/" local="130689381423913700" remote="130723955400000000" />
+<file name="time12h.js" server="ypsilon.solucionesoftware.com.mx//httpdocs/" local="130689381213361657" remote="130723955400000000" />
+<file name="url2.js" server="ypsilon.solucionesoftware.com.mx//httpdocs/" local="130689381267374747" remote="130723955400000000" />
+<file name="vinUS.js" server="ypsilon.solucionesoftware.com.mx//httpdocs/" local="130689381321157823" remote="130723955400000000" />
+<file name="zipcodeUS.js" server="ypsilon.solucionesoftware.com.mx//httpdocs/" local="130689381262274455" remote="130723955400000000" />
+<file name="ziprange.js" server="ypsilon.solucionesoftware.com.mx//httpdocs/" local="130689381223312226" remote="130723955400000000" />
+</dwsync>

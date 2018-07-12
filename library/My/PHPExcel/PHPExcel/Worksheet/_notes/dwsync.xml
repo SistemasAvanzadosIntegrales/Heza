@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<dwsync>
+<file name="BaseDrawing.php" server="solucionesoftware.com.mx/httpdocs/siturco/" local="129816697200000000" remote="129816697200000000" />
+<file name="CellIterator.php" server="solucionesoftware.com.mx/httpdocs/siturco/" local="129816697200000000" remote="129816697200000000" />
+<file name="ColumnDimension.php" server="solucionesoftware.com.mx/httpdocs/siturco/" local="129816697200000000" remote="129816697200000000" />
+<file name="Drawing.php" server="solucionesoftware.com.mx/httpdocs/siturco/" local="129816697200000000" remote="129816697200000000" />
+<file name="HeaderFooter.php" server="solucionesoftware.com.mx/httpdocs/siturco/" local="129816697200000000" remote="129816697200000000" />
+<file name="HeaderFooterDrawing.php" server="solucionesoftware.com.mx/httpdocs/siturco/" local="129816697200000000" remote="129816697200000000" />
+<file name="MemoryDrawing.php" server="solucionesoftware.com.mx/httpdocs/siturco/" local="129816697200000000" remote="129816697200000000" />
+<file name="PageMargins.php" server="solucionesoftware.com.mx/httpdocs/siturco/" local="129816697200000000" remote="129816697200000000" />
+<file name="PageSetup.php" server="solucionesoftware.com.mx/httpdocs/siturco/" local="129816697200000000" remote="129816697200000000" />
+<file name="Protection.php" server="solucionesoftware.com.mx/httpdocs/siturco/" local="129816697200000000" remote="129816697200000000" />
+<file name="Row.php" server="solucionesoftware.com.mx/httpdocs/siturco/" local="129816697200000000" remote="129816697200000000" />
+<file name="RowDimension.php" server="solucionesoftware.com.mx/httpdocs/siturco/" local="129816697200000000" remote="129816697200000000" />
+<file name="RowIterator.php" server="solucionesoftware.com.mx/httpdocs/siturco/" local="129816697200000000" remote="129816697200000000" />
+<file name="SheetView.php" server="solucionesoftware.com.mx/httpdocs/siturco/" local="129816697200000000" remote="129816697200000000" />
+<file name="BaseDrawing.php" server="sertull.solucionesoftware.com.mx//httpdocs/" local="129960832200000000" remote="129960832200000000" />
+<file name="CellIterator.php" server="sertull.solucionesoftware.com.mx//httpdocs/" local="129960832200000000" remote="129960832200000000" />
+<file name="ColumnDimension.php" server="sertull.solucionesoftware.com.mx//httpdocs/" local="129960832200000000" remote="129960832200000000" />
+<file name="Drawing.php" server="sertull.solucionesoftware.com.mx//httpdocs/" local="129960832200000000" remote="129960832200000000" />
+<file name="HeaderFooter.php" server="sertull.solucionesoftware.com.mx//httpdocs/" local="129960832200000000" remote="129960832200000000" />
+<file name="HeaderFooterDrawing.php" server="sertull.solucionesoftware.com.mx//httpdocs/" local="129960832200000000" remote="129960832200000000" />
+<file name="MemoryDrawing.php" server="sertull.solucionesoftware.com.mx//httpdocs/" local="129960832200000000" remote="129960832200000000" />
+<file name="PageMargins.php" server="sertull.solucionesoftware.com.mx//httpdocs/" local="129960832200000000" remote="129960832200000000" />
+<file name="PageSetup.php" server="sertull.solucionesoftware.com.mx//httpdocs/" local="129960832800000000" remote="129960832800000000" />
+<file name="Protection.php" server="sertull.solucionesoftware.com.mx//httpdocs/" local="129960832800000000" remote="129960832800000000" />
+<file name="Row.php" server="sertull.solucionesoftware.com.mx//httpdocs/" local="129960832800000000" remote="129960832800000000" />
+<file name="RowDimension.php" server="sertull.solucionesoftware.com.mx//httpdocs/" local="129960832800000000" remote="129960832800000000" />
+<file name="RowIterator.php" server="sertull.solucionesoftware.com.mx//httpdocs/" local="129960832800000000" remote="129960832800000000" />
+<file name="SheetView.php" server="sertull.solucionesoftware.com.mx//httpdocs/" local="129960832800000000" remote="129960832800000000" />
+<file name="BaseDrawing.php" server="edumas.solucionesoftware.com.mx/httpdocs/" local="130094839980000000" remote="130135505400000000" />
+<file name="CellIterator.php" server="edumas.solucionesoftware.com.mx/httpdocs/" local="130094840020000000" remote="130135505400000000" />
+<file name="ColumnDimension.php" server="edumas.solucionesoftware.com.mx/httpdocs/" local="130094840000000000" remote="130135505400000000" />
+<file name="Drawing.php" server="edumas.solucionesoftware.com.mx/httpdocs/" local="130094839980000000" remote="130135505400000000" />
+<file name="HeaderFooter.php" server="edumas.solucionesoftware.com.mx/httpdocs/" local="130094840020000000" remote="130135505400000000" />
+<file name="HeaderFooterDrawing.php" server="edumas.solucionesoftware.com.mx/httpdocs/" local="130094840000000000" remote="130135505400000000" />
+<file name="MemoryDrawing.php" server="edumas.solucionesoftware.com.mx/httpdocs/" local="130094839980000000" remote="130135505400000000" />
+<file name="PageMargins.php" server="edumas.solucionesoftware.com.mx/httpdocs/" local="130094840000000000" remote="130135505400000000" />
+<file name="PageSetup.php" server="edumas.solucionesoftware.com.mx/httpdocs/" local="130094839980000000" remote="130135505400000000" />
+<file name="Protection.php" server="edumas.solucionesoftware.com.mx/httpdocs/" local="130094840000000000" remote="130135505400000000" />
+<file name="Row.php" server="edumas.solucionesoftware.com.mx/httpdocs/" local="130094840000000000" remote="130135505400000000" />
+<file name="RowDimension.php" server="edumas.solucionesoftware.com.mx/httpdocs/" local="130094840000000000" remote="130135505400000000" />
+<file name="RowIterator.php" server="edumas.solucionesoftware.com.mx/httpdocs/" local="130094840020000000" remote="130135505400000000" />
+<file name="SheetView.php" server="edumas.solucionesoftware.com.mx/httpdocs/" local="130094839980000000" remote="130135505400000000" />
+</dwsync>

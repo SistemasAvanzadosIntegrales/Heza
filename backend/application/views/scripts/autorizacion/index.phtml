@@ -1,0 +1,41 @@
+<div class="panel panel-default" style="margin: 5px 0;">
+	
+	<div class="pnl-heading-rojo-1 clearfix">
+		<h3 class="panel-title pull-left">Autorizaciones</h3>
+	</div>
+	
+	<div class="panel-body">
+		<form name="frmFiltrosAutorizacion" id="frmFiltrosAutorizacion"> 
+			<div class="row margin-bottom-3">
+				<div class="col-xs-3">
+					<!--<label for="fstatus" class="sr-only">Estatus</label>
+					<select id="fstatus" name="status" class="form-control input-sm">
+						<option value="" selected>- Todos los estatus -</option>
+						<option value="0">No Resuelto</option>
+						<option value="1">Aceptado</option>
+						<option value="2">Denegado</option>
+					</select>-->
+				</div>
+				
+				<div class="col-xs-7 col-xs-offset-2 text-right">
+					<!--<button class="btn btn-sm btn-default" type="button" onclick="filtrar('frmFiltrosAutorizacion','/autorizacion/grid','/autorizacion/imprimir','/autorizacion/exportar');">
+						<i class="fa fa-search"></i>&nbsp;Filtrar
+					</button>-->
+					<button class="btn btn-sm btn-default" type="button" onclick="limpiar('frmFiltrosAutorizacion','/autorizacion/grid');">
+						<i class="fa fa-eraser"></i>&nbsp;Limpiar
+					</button>
+					<!--
+					<a id="btnImprimir" target="_blank" href="/usuario/imprimir" class="btn btn-sm btn-default" >
+						<i class="fa fa-search"></i>&nbsp;Imprimir
+					</a>
+					<a id="btnExportar" target="_blank" href="/usuario/exportar" class="btn btn-sm btn-default"  >
+						<i class="fa fa-eraser"></i>&nbsp;Exportar
+					</a>-->
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+
+<div id="flexigrid"></div>
+<div class="height-5"></div>

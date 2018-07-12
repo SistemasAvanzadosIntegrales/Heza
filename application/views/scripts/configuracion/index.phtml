@@ -1,0 +1,38 @@
+<div class="panel panel-default" style="margin: 5px 0;">
+  <div class="pnl-heading-rojo-1 clearfix"><h3 class="panel-title pull-left">Configuración</h3></div>
+      <form id="frmConfiguracion" name="frmConfiguracion" method="post" action="/configuracion/guardar" role="form">
+        <div class="panel-body">
+            <div class="row margin-bottom-3">
+                <div class="col-xs-12 form-group"> 
+                    <label for="nombre" class="col-xs-3 control-label" style="padding: 0px;"><span class="naranja">*</span>Tasa de ISR:</label>
+                    <div class="col-xs-1 sinPaddingRight">
+                        <input type="text" id="tasa_isr" name="tasa_isr" class="form-control input-sm number required" value="<?php echo $this->configuracion->tasa_isr; ?>" maxlength="2" placeholder="#"/>
+                    </div>
+                </div>
+
+                <div class="col-xs-12 form-group"> 
+                    <label for="razon_social" class="col-xs-3 control-label" style="padding: 0px;"><span class="naranja">*</span>Instancia de la base de datos:</label>
+                    <div class="col-xs-4 sinPaddingRight">
+                        <input type="text" id="instancia_bd" name="instancia_bd" class="form-control input-sm required" value="<?php echo $this->configuracion->instancia_bd; ?>" maxlength="100" placeholder="Instancia de la base de datos"/>
+                    </div>
+                </div> 
+                
+                <div class="col-xs-12 form-group"> 
+                    <label for="razon_social" class="col-xs-3 control-label" style="padding: 0px;"><span class="naranja">*</span>Contraseña :</label>
+                    <div class="col-xs-4 sinPaddingRight">
+                        <input type="text" id="contrasena" name="contrasena" class="form-control input-sm required" value="<?php echo $this->configuracion->contrasena; ?>" maxlength="100" placeholder="Instancia de la base de datos"/>
+                    </div>
+                </div> 
+
+            <div class="row sinMargin">
+                <div class="col-xs-2 col-xs-offset-2 text-center">
+                    <a onclick="guardar('frmConfiguracion');" class="btn btn-success marginLat5p">
+                        <i class="fa fa-floppy-o"></i>&nbsp;Guardar
+                    </a>
+                </div>
+            </div>
+                <input type="hidden" name="id" id="id" value="<?php echo $this->configuracion->id; ?>" />
+            </div>
+        </div>
+    </form>
+</div>

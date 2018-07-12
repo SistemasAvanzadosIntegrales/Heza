@@ -1,0 +1,37 @@
+<div class="row">
+    <div id="errorInerperado" name="errorInerperado">
+        <h3>Error inesperado</h3>
+        <div>
+            <div class="col-sm-6 col-xs-24">
+                <img class="img" src="/imagenes/inesperado.jpg" alt="" />
+            </div>
+            <div class="col-sm-18 col-xs-24">
+                <h2>
+                    ¡UPS!...
+                </h2>
+                <h3>
+                    Ha ocurrido un error inesperado.
+                </h3>
+                <br /><br />
+                <p class="text-muted">
+                    Lo sentimos, pero parece que algo est&aacute; ocurriendo. No se preocupe, ya estamos trabajando para resolverlo.
+                </p>
+                <p class="text-muted">Mientras tanto, le pedimos que se dirija a nuestra p&aacute;gina de <a href="/index">inicio</a> y contin&uacute;e navegando.</p>
+            </div>        
+        </div>
+        <h3>Descripci&oacute;n</h3>
+        <div>
+            <h2><?php echo $this->message; ?></h2>
+            <?php
+            if (isset($this->exception)){ ?>
+                <h3>Informaci&oacute;n del error:</h3>
+                <p><b>Mensaje:</b> <?php echo $this->exception->getMessage(); ?></p>
+                <h3>Stack trace:</h3>
+                <pre><?php echo $this->exception->getTraceAsString(); ?></pre>
+                <h3>Par&aacute;metros de env&iacute;o:</h3>
+                <pre><?php echo $this->escape(var_export($this->request->getParams(), true)); ?></pre>
+            <?php
+            } ?>
+        </div>
+    </div>
+</div>

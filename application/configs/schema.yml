@@ -1,0 +1,44 @@
+detect_relations: true
+Bitacora:
+  connection: doctrine
+  tableName: bitacora
+  columns:
+    tabla_id:
+      type: integer(8)
+      notnull: true
+    usuario_id:
+      type: integer(8)
+      notnull: true
+    modelo:
+      type: string(100)
+      notnull: true
+    accion:
+      type: string(100)
+      notnull: true
+    referencia:
+      type: string()
+      notnull: true
+  actAs:
+    Timestampable:
+Usuario:
+  connection: doctrine
+  tableName: usuario
+  columns:
+    nombre:
+      type: string(200)
+      notnull: true
+    correo_electronico:
+      type: string(100)
+      notnull: true
+    contrasena:
+      type: string(20)
+      notnull: true
+    permisos:
+      type: string()
+      notnull: true
+    status:
+      type: integer(1)
+      default: '1'
+      notnull: true
+  actAs:
+    Timestampable:

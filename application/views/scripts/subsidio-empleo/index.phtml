@@ -1,0 +1,71 @@
+<div class="panel panel-default" style="margin: 5px 0;">
+	<input type="hidden" name="empresa_id" id="id_empresa" value="" />
+	<input type="hidden" name="ejercicio_id" id="id_ejercicio" value="" />
+	<div class="pnl-heading-rojo-1 clearfix">
+		<h3 class="panel-title pull-left">Subsidios de Empleo</h3>
+	</div>
+	
+	<div class="panel-body">
+		<div class="row margin-bottom-3">
+			<form id="frmFiltroSubsidioEmpleo" name="frmFiltroSubsidioEmpleo">
+				<div class="col-xs-3">
+					<label for="fempresa_id" class="sr-only">Empresa</label>
+					<select data-placeholder="Elige una Empresa" class="chosen-select" tabindex="2" name="fempresa_id" id="fempresa_id"></select>
+				</div>
+				
+				<div class="col-xs-3">
+					<label for="fejercicio_id" class="sr-only">Ejercicio</label>
+					<select data-placeholder="Elige un Ejercicio" class="chosen-select" tabindex="2" name="fejercicio_id" id="fejercicio_id"></select>
+				</div>
+				<div class="col-xs-6 text-right filtros">
+					<a id="btnImprimir" target="_blank" onclick="imprimir()" class="btn btn-sm btn-default" >
+						<i class="fa fa-search"></i>&nbsp;Imprimir
+					</a>
+					<a id="btnExportar" target="_blank" onclick="exportar()" class="btn btn-sm btn-default"  >
+						<i class="fa fa-eraser"></i>&nbsp;Exportar
+					</a>
+				</div>
+			</form>
+		</div>
+	</div>
+	
+	<form id="frmSubsidioEmpleo" name="frmSubsidioEmpleo" method="post" action="/subsidio-empleo/guardar" role="form">
+		<div class="panel-body">
+			<div class="row margin-bottom-3">
+				<div class="col-xs-10 sinMargin">
+					<div class="pnl-heading-rojo-1 clearfix">
+						<h3 class="panel-title text-center">Subsidios de Empleos</h3>
+					</div>
+					<div id="flexigrid"></div>
+				</div>
+				
+				<div class="col-xs-2 sinPaddingLeft">
+					<div class="panel panel-default" >
+						<div class="pnl-heading-rojo-1 clearfix">
+							<h3 class="panel-title pull-left">Remanente Total</h3>
+						</div>
+						
+						<div class="panel-body">
+							<div class="row margin-bottom-3">
+								<div class="col-xs-12 form-group"> 
+									<h1 id="remanente" class="center">$0.00</h1>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="panel-body">
+			<div class="row margin-bottom-3">
+				<div class="col-xs-12 sinMargin">
+					<div class="pnl-heading-rojo-1 clearfix">
+						<h3 class="panel-title text-center">Aplicaciones</h3>
+					</div>
+					<div id="flexigrid-1"></div>
+				</div>
+			</div>
+		</div>
+	</form>
+</div>

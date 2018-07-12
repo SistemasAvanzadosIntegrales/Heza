@@ -1,0 +1,187 @@
+<div class="panel panel-default" style="margin: 5px 0;">
+<!--	<input type="hidden" name="empresa_id" id="id_empresa" value="" />
+	<input type="hidden" name="ejercicio_id" id="id_ejercicio" value="" />-->
+	<div class="pnl-heading-rojo-1 clearfix">
+		<h3 class="panel-title pull-left">Compensaciones</h3>
+	</div>
+	
+	<div class="panel-body">
+		<div class="row margin-bottom-3">
+			<form id="frmFiltroCompensacion" name="frmFiltroCompensacion">
+				<div class="col-xs-3">
+					<label for="fempresa_id" class="sr-only">Empresa</label>
+					<select data-placeholder="Elige una Empresa" class="chosen-select" tabindex="2" name="fempresa_id" id="fempresa_id"></select>
+				</div>
+				
+				<div class="col-xs-3">
+					<label for="fejercicio_id" class="sr-only">Ejercicio</label>
+					<select data-placeholder="Elige un Ejercicio" class="chosen-select" tabindex="2" name="fejercicio_id" id="fejercicio_id"></select>
+				</div>
+				<div class="col-xs-6 text-right filtros">
+					<a id="btnImprimir" target="_blank" onclick="imprimir()" class="btn btn-sm btn-default" >
+						<i class="fa fa-search"></i>&nbsp;Imprimir
+					</a>
+					<a id="btnExportar" target="_blank" onclick="exportar()" class="btn btn-sm btn-default"  >
+						<i class="fa fa-eraser"></i>&nbsp;Exportar
+					</a>
+				</div>
+			</form>
+		</div>
+	</div>
+	
+	<form id="frmCompensacion" name="frmCompensacion" method="post" action="/compensacion/guardar" role="form">
+		<div class="panel-body" style="padding-bottom: 0;">
+			<div class="row margin-bottom-3">
+				<div class="col-xs-7">
+					<div class="pnl-heading-rojo-1 clearfix">
+						<h3 class="panel-title text-center">Compensaciones</h3>
+					</div>
+					<div id="flexigrid"></div>
+				</div>
+				
+				<div class="col-xs-5">
+					<div class="panel panel-default" >
+						<div class="pnl-heading-rojo-1 clearfix">
+							<h3 class="panel-title pull-left">Alta / Edición de Compensaciones</h3>
+						</div>
+						<div class="panel-body">
+							<div class="row margin-bottom-3">
+								<div class="col-xs-12 form-group"> 
+									<label for="tipo_impuesto" class="col-xs-5 control-label" style="padding: 0px;"><span class="naranja">*</span>Tipo de impuesto:</label>
+									<div class="col-xs-7">
+										<select id="tipo_impuesto" name="tipo_impuesto" class="form-control input-sm required">
+											<option>Seleccione tipo de impuesto</option>
+											<option value="ISR">ISR</option>
+											<option value="IVA">IVA</option>
+										</select>
+										</select>
+									</div>
+								</div>
+								
+								<div class="col-xs-12 form-group"> 
+									<label for="periodo" class="col-xs-5 control-label" style="padding: 0px;"><span class="naranja">*</span>Periodo:</label>
+									<div class="col-xs-7">
+										<select id="periodo" name="periodo" class="form-control input-sm required">
+											<option>Seleccione el periodo</option>
+											<option value="1">Enero</option>
+											<option value="2">Febrero</option>
+											<option value="3">Marzo</option>
+											<option value="4">Abril</option>
+											<option value="5">Mayo</option>
+											<option value="6">Junio</option>
+											<option value="7">Julio</option>
+											<option value="8">Agosto</option>
+											<option value="9">Septiembre</option>
+											<option value="10">Octubre</option>
+											<option value="11">Noviembre</option>
+											<option value="12">Diciembre</option>
+											<option value="13">Todo el año</option>
+										</select>
+									</div>
+								</div>
+								
+								<div class="col-xs-12 form-group"> 
+									<label for="declaracion" class="col-xs-5 control-label" style="padding: 0px;"><span class="naranja">*</span>Tipo de declaración:</label>
+									<div class="col-xs-7">
+										<select id="tipo_declaracion" name="tipo_declaracion" class="form-control input-sm required">
+											<option>Seleccione tipo de impuesto</option>
+											<option value="Normal">Normal</option>
+											<option value="Complementaria">Complementaria</option>
+										</select>
+										</select>
+									</div>
+								</div>
+								
+								<div class="col-xs-12 form-group"> 
+									<label for="operacion" class="col-xs-5 control-label" style="padding: 0px;"><span class="naranja">*</span>Número de operación:</label>
+									<div class="col-xs-7">
+										<input type="text" id="numero_operacion" name="numero_operacion" class="form-control input-sm required" value=""  maxlength="20" placeholder="Númerode de operación" />
+									</div>
+								</div>
+								
+								<div class="col-xs-12 form-group"> 
+									<label for="monto" class="col-xs-5 control-label" style="padding: 0px;"><span class="naranja">*</span>Monto original:</label>
+									<div class="col-xs-7">
+										<input type="text" id="monto_original" name="monto_original" class="form-control input-sm required off" value="" maxlength="20" placeholder="Monto original" />
+									</div>
+								</div>
+								
+								<div class="col-xs-12 form-group"> 
+									<label for="monto_aplicar" class="col-xs-5 control-label" style="padding: 0px;"><span class="naranja">*</span>Monto a aplicar:</label>
+									<div class="col-xs-7">
+										<input type="text" id="monto_aplicar" name="monto_aplicar" class="form-control input-sm required" value="" maxlength="20" placeholder="Monto a aplicar" />
+									</div>
+								</div>
+								
+								<div class="col-xs-12 form-group"> 
+									<label for="remanente_antes" class="col-xs-5 control-label" style="padding: 0px;"><span class="naranja">*</span>Remanenete antes de la aplicación:</label>
+									<div class="col-xs-7">
+										<input type="text" readonly="readonly" id="remanente_antes" name="remanente_antes" class="form-control input-sm required" value="" maxlength="20" placeholder="Remanente Antes" />
+									</div>
+								</div>
+								
+								<div class="col-xs-12 form-group"> 
+									<label for="fremanente_despues" class="col-xs-5 control-label" style="padding: 0px;"><span class="naranja">*</span>Remanente:</label>
+									<div class="col-xs-7 sinPaddingRight">
+										<input type="text" id="fremanente_despues" name="remanente_despues" readonly="readonly" class="form-control input-sm" value=""  maxlength="100" placeholder="Remanente" />
+									</div>
+								</div>
+							</div>
+							
+							<div class="row sinMargin text-center">
+								<div class="col-xs-4 text-center mt40px acciones">
+									<button type="button" onclick="guardar('frmCompensacion','/compensacion/grid','/compensacion/imprimir','/compensacion/exportar');limpiarfrmCompensacion();" class="col-xs-12 btn btn-success marginLat5p <?php echo(($this->puedeAgregar) ? "" : "hide"); ?>">
+										<i class="fa fa-floppy-o"></i>&nbsp;Guardar
+									</button>
+								</div>
+								
+								<div class="col-xs-4 text-center mt40px acciones"> 
+									<button type="button" onclick="limpiarfrmCompensacion()" class="col-xs-12 btn btn-primary marginLat5p <?php echo(($this->puedeAgregar) ? '' : 'hide'); ?>">
+										<i class="fa fa-eraser"></i>&nbsp;Limpiar
+									</button>
+								</div>
+								
+								<div class="col-xs-4 text-center mt40px filtros">
+									<a onclick="eliminar('', '1');" id="eliminar" class="col-xs-12 btn btn-danger  marginLat5p <?php echo(($this->puedeEliminar) ? '' : 'hide'); ?>">
+										<i class="fa fa-times"></i>&nbsp;Eliminar
+									</a>
+								</div>
+								<input type="hidden" name="id" id="id" value="" />
+								<input type="hidden" name="empresa_id" id="id_empresa" value="" />
+								<input type="hidden" name="ejercicio_id" id="id_ejercicio" value="" />
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<!-------------------------------------------------------->
+		
+		<div class="panel-body">
+			<div class="row margin-bottom-3">
+				<div class="col-xs-10">
+					<div class="pnl-heading-rojo-1 clearfix">
+						<h3 class="panel-title text-center">Aplicaciones</h3>
+					</div>
+					<div id="flexigrid-1"></div>
+				</div>
+				<div class="col-xs-2">
+					<div class="panel panel-default" >
+						<div class="pnl-heading-rojo-1 clearfix">
+							<h3 class="panel-title pull-left">Remanente Total</h3>
+						</div>
+						
+						<div class="panel-body">
+							<div class="row margin-bottom-3">
+								<div class="col-xs-12 form-group"> 
+									<h1 id="remanenteTotal" class="center">$0.00</h1>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</form>
+</div>

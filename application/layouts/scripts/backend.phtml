@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<!-- Quitar los responsivo -->
+		<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+		<meta name="description" content="Avansys">
+		<title>Heza</title>
+		<link rel="stylesheet" type="text/css" href="/recursos/jquery_ui_1_11_4/jquery-ui.css" />
+		<link rel="stylesheet" type="text/css" href="/recursos/bootstrap/bootstrap.css" />
+		<link rel="stylesheet" type="text/css" href="/recursos/flexigrid/flexigrid.css" />
+		<link rel="stylesheet" type="text/css" href="/recursos/normalize/normalize_3_0_3.css" />
+		<link rel="stylesheet" type="text/css" href="/recursos/font-awesome-4-6-3/css/font-awesome.css" />
+		<link rel="stylesheet" type="text/css" href="/recursos/chosenv1.7/chosen.css" />
+		<link rel="stylesheet" type="text/css" href="/css/comun.css" />
+		<link rel="stylesheet" type="text/css" href="/css/backend.css" />
+		<link rel="apple-touch-icon" sizes="180x180" href="/imagenes/apple-touch-icon.png">
+		<link rel="icon" type="image/png" href="/imagenes/faviconheza-32x32.png" sizes="32x32">
+		<link rel="icon" type="image/png" href="/imagenes/faviconheza-16x16.png" sizes="16x16">
+		<link rel="manifest" href="/imagenes/manifest.json">
+		<link rel="mask-icon" href="/imagenes/safari-pinned-tab.svg" color="#5bbad5">
+		<link rel="shortcut icon" href="/imagenes/faviconheza.ico">
+		
+		<meta name="msapplication-TileColor" content="#e21f19">
+		<meta name="msapplication-TileImage" content="/imagenes/mstile-144x144.png">
+		<meta name="msapplication-config" content="/imagenes/browserconfig.xml">
+		<meta name="theme-color" content="#ffffff">
+		<?php echo $this->headLink(); ?>
+	</head>
+	
+	<body>
+		<header class="banner">
+			<div class="encabezado">
+				<figure class="pull-left">
+					<img src="/imagenes/logo-heza.png" class="logo" alt="Onappafa" title="Onappafa" />
+				</figure>
+				
+				<div class="row col-xs-4">
+					<h1 class="mt60px bold f24px text-center">Sistema Administrativo</h1>
+				</div>
+				
+				<div class="btn-group pull-right menu">
+					<div class="btn-group">
+						<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+							<i class="fa fa-list-alt"></i>
+							&nbsp;Cat&aacute;logos
+							<span class="caret"></span>
+						</button>
+						<ul class="dropdown-menu text-left" role="menu">
+							<?php if( My_Comun::tienePermiso("VER_BITACORA") )      { ?><li><a href="/bitacora"><i class="fa fa-th-list"></i>&nbsp;Bitácora</a></li>             <?php } ?>
+							<?php if( My_Comun::tienePermiso("VER_USUARIO") )       { ?><li><a href="/usuario"><i class="fa fa-users"></i>&nbsp;Usuarios</a></li>                <?php } ?>
+							<?php if( My_Comun::tienePermiso("VER_EMPRESA") )       { ?><li><a href="/empresa"><i class="fa fa-building-o"></i>&nbsp;Empresa</a></li>            <?php } ?>
+							<?php if( My_Comun::tienePermiso("VER_EJERCICIO") )     { ?><li><a href="/ejercicio"><i class="fa fa-tasks"></i>&nbsp;Ejercicios</a></li>            <?php } ?>
+							<?php if( My_Comun::tienePermiso("VER_AUTORIZACION") )  { ?><li><a href="/autorizacion"><i class="fa fa-check-square-o"></i>&nbsp;Autorizaciones</a></li>      <?php } ?>
+						</ul>
+					</div>
+					<div class="btn-group">
+						<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+							<i class="fa fa-usd"></i>
+							&nbsp;Impuestos
+							<span class="caret"></span>
+						</button>
+						<ul class="dropdown-menu text-left" role="menu">
+							<?php if(My_Comun::tienePermiso("VER_SUBSIDIO"))         { ?><li><a href="/subsidio-empleo"><i class="fa fa-money"></i>&nbsp;Subsidio al empleo</a></li>                 <?php } ?>
+							<?php if(My_Comun::tienePermiso("VER_COMPENSACIONES"))   { ?><li><a href="/compensacion"><i class="fa fa-users"></i>&nbsp;Compensaciones</a></li>                        <?php } ?>
+							<?php if(My_Comun::tienePermiso("VER_COEFICIENTE"))      { ?><li><a href="/coeficiente"><i class="fa fa-pie-chart"></i>&nbsp;Coeficiente de utilidad</a></li>            <?php } ?>
+							<?php if(My_Comun::tienePermiso("VER_COEFICIENTE_ACRE")) { ?><li><a href="/coeficiente-acre"><i class="fa fa-pie-chart"></i>&nbsp;Coeficiente de acreditamiento</a></li> <?php } ?>
+							<?php if(My_Comun::tienePermiso("VER_PAGOPM"))           { ?><li><a href="/pago-provisionalpm"><i class="fa fa-credit-card"></i>&nbsp;Pago provisional PM</a></li>       <?php } ?>
+						</ul>
+					</div>
+					
+					<a class="btn btn-default" href="javascript:_usuario('<?php echo Zend_Auth::getInstance()->getIdentity()->id ?>')">
+						&nbsp;Mis Datos
+						<i class="fa fa-user"></i>
+					</a>
+					<a class="btn btn-default" href="http://<?php echo $_SERVER["SERVER_NAME"] ?>/ingreso/salir">
+						Salir
+						<i class="fa fa-sign-out"></i>
+					</a>
+				</div>
+			</div>
+		</header>
+		
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-24">
+					<?php echo $this->layout()->content; ?>
+				</div>
+			</div>
+		</div>
+		
+		<?php
+			if( $this->controlador == 'index' && $this->pagina == 'index'){
+				
+			}else{
+				echo '<footer id="footer2"></footer>';
+			}
+		?>
+		
+		<input type="hidden" name="_peticion" id="_peticion" value="       <?php echo $this->peticion; ?>" />
+		<input type="hidden" name="_modulo" id="_modulo" value="           <?php echo $this->modulo; ?>" />
+		<input type="hidden" name="_controlador" id="_controlador" value=" <?php echo $this->controlador; ?>" />
+		<input type="hidden" name="_accion" id="_accion" value="           <?php echo $this->accion; ?>" />
+		
+		<div id="_dialogo-1" class="display-none"></div>
+		<div id="_dialogo-2" class="display-none"></div>
+		<div id="_dialogo-3" class="display-none"></div>
+		<div id="_dialogo-pausa-notificacion" class="display-none"></div>
+		<div id="_mensaje-1" class="display-none"></div>
+		<div id="_mensaje-2" class="display-none"></div>
+		<div id="_mensaje-3" class="display-none"></div>
+		
+		<!-- La carga de los scripts debe hacerse al final -->
+		<script src="/recursos/jquery_2_2_1/jquery2_2_1.js"></script>
+		<script src="/recursos/jquery_ui_1_11_4/jquery-ui.js"></script>
+		<script src="/recursos/bootstrap/bootstrap.js"></script>
+		<script src="/recursos/flexigrid/flexigrid.js"></script>
+		<script src="/recursos/jquery_form_3_18/ajaxforms.js"></script>
+		<script src="/recursos/jquery_validation_1_13_0/dist/jquery.validate.min.js"></script>    
+		<script src="/recursos/jquery_validation_1_13_0/dist/localization/messages_es.min.js"></script>   
+		<script src="/recursos/chosenv1.7/chosen.jquery.js"></script>
+		
+		<?php echo $this->headScript(); ?>
+		<script src="/js/backend/comun.js"></script>
+	</body>
+</html>

@@ -1,0 +1,269 @@
+<div class="panel panel-default" style="margin: 5px 0;">
+	<div class="pnl-heading-rojo-1 clearfix"><h3 class="panel-title pull-left">Empresas</h3></div>
+	
+	<div class="panel-body">
+		<div class="row margin-bottom-3">
+			<form id="frmFiltroEmpresas" name="frmFiltroEmpresas">
+				
+				<div class="col-xs-2">
+					<label for="fnombre" class="sr-only">Nombre</label>
+					<input type="text" name="nombre" id="fnombre" class="form-control input-sm" value="" placeholder="Nombre de empresa"/>
+				</div>
+				<div class="col-xs-2">
+					<label for="frazon" class="sr-only">Razon social</label>
+					<input type="text" name="razon" id="frazon" class="form-control input-sm" value="" placeholder="Razón social"/>
+				</div>
+				<div class="col-xs-2">
+					<label for="fstatus" class="sr-only">Estatus</label>
+					<select id="fstatus" name="fstatus" class="form-control input-sm">
+						<option value="" >- Todos los estatus -</option>
+						<option value="1" selected>Activo</option>
+						<option value="0">Inactivo</option>
+					</select>
+				</div>
+				
+				<div class="col-xs-6 text-right">
+					<a class="btn btn-sm btn-default" type="button" onclick="filtrar('frmFiltroEmpresas', '/empresa/grid', '/empresa/imprimir', '/empresa/exportar');">
+						<i class="fa fa-search"></i>&nbsp;Filtrar
+					</a>
+					<a class="btn btn-sm btn-default" type="button" onclick="limpiar('frmFiltroEmpresas','/empresa/grid');">
+						<i class="fa fa-eraser"></i>&nbsp;Limpiar
+					</a>
+					<a id="btnImprimir" target="_blank" href="/empresa/imprimir" class="btn btn-sm btn-default" >
+						<i class="fa fa-search"></i>&nbsp;Imprimir
+					</a>
+					<a id="btnExportar" target="_blank" href="/empresa/exportar" class="btn btn-sm btn-default"  >
+						<i class="fa fa-eraser"></i>&nbsp;Exportar
+					</a>
+				</div>
+			</form>
+		</div>
+	</div>
+	
+	<form id="frmEmpresa" name="frmEmpresa" method="post" action="/empresa/guardar" role="form">
+		<div class="panel-body">
+			<div class="row margin-bottom-3">
+				<div class="col-xs-7 sinMargin">
+					<div class="pnl-heading-rojo-1 clearfix"><h3 class="panel-title text-center">Empresas</h3></div>
+					<div id="flexigrid"></div>
+				</div>
+				
+				<div class="col-xs-5 sinPaddingLeft">
+					<div class="panel panel-default" >
+						<div class="pnl-heading-rojo-1 clearfix">
+							<h3 class="panel-title pull-left">Alta / Edición de Empresa</h3>
+						</div>
+						<div class="panel-body">
+							<div class="row margin-bottom-3">
+								<div class="col-xs-12 form-group"> 
+									<label for="nombre" class="col-xs-4 control-label" style="padding: 0px;"><span class="naranja">*</span>Nombre comercial:</label>
+									<div class="col-xs-8 sinPaddingRight">
+										<input type="text" id="nombre" name="nombre" class="form-control input-sm required" value=""  maxlength="100" placeholder="Nombre" />
+									</div>
+								</div>
+								
+								<div class="col-xs-12 form-group"> 
+									<label for="razon_social" class="col-xs-4 control-label" style="padding: 0px;"><span class="naranja">*</span>Razón social:</label>
+									<div class="col-xs-8 sinPaddingRight">
+										<input type="text" id="razon_social" name="razon_social" class="form-control input-sm required" value=""  maxlength="100" placeholder="Razón social" />
+									</div>
+								</div>
+								
+								<div class="col-xs-12 form-group"> 
+									<label for="nombre_bd_contpaq" class="col-xs-4 control-label" style="padding: 0px;"><span class="naranja">*</span>Nombre DB Contpaq:</label>
+									<div class="col-xs-8 sinPaddingRight">
+										<input type="text" id="nombre_bd_contpaq" name="nombre_bd_contpaq" class="form-control input-sm required" value=""  maxlength="200" placeholder="Nombre DB Contpaq" />
+									</div>
+								</div>
+								
+								<div class="col-xs-12 form-group"> 
+									<label for="usuario_bd_contpaq" class="col-xs-4 control-label" style="padding: 0px;"><span class="naranja">*</span>Usuario DB Contpaq:</label>
+									<div class="col-xs-8 sinPaddingRight">
+										<input type="text" id="usuario_bd_contpaq" name="usuario_bd_contpaq" class="form-control input-sm" value=""  maxlength="30" placeholder="Usuario DB Contpaq" />
+									</div>
+								</div>
+								
+								<div class="col-xs-12 form-group"> 
+									<label for="pass_bd_contpaq" class="col-xs-4 control-label" style="padding: 0px;"><span class="naranja">*</span>Contraseña DB Contpaq:</label>
+									<div class="col-xs-8 sinPaddingRight">
+										<input type="password" id="pass_bd_contpaq" name="pass_bd_contpaq" class="form-control input-sm" value=""  maxlength="30" placeholder="Contraseña DB Contpaq" />
+									</div>
+								</div>
+								
+								<div class="col-xs-12 form-group"> 
+									<label for="server_bd_contpaq" class="col-xs-4 control-label" style="padding: 0px;"><span class="naranja">*</span>Servidor DB Contpaq:</label>
+									<div class="col-xs-8 sinPaddingRight">
+										<input type="text" id="server_bd_contpaq" name="server_bd_contpaq" class="form-control input-sm" value=""  maxlength="30" placeholder="Servidor DB Contpaq" />
+									</div>
+								</div>
+								
+								<div class="col-xs-12 form-group"> 
+									<label for="tasa" class="col-xs-4 control-label" style="padding: 0px;"><span class="naranja">*</span>% Tasa:</label>
+									<div class="col-xs-8 sinPaddingRight">
+										<input type="text" id="tasa" name="tasa" class="form-control input-sm required" value=""  maxlength="30" placeholder="% Tasa" />
+									</div>
+								</div>
+								
+								<div class="col-xs-12 form-group"> 
+									<label for="isr_retenido" class="col-xs-4 control-label" style="padding: 0px;"><span class="naranja">*</span>#Cuenta ISR Retenido:</label>
+									<div class="col-xs-8 sinPaddingRight">
+										<input type="text" id="isr_retenido" name="isr_retenido" class="form-control input-sm required" value=""  maxlength="30" placeholder="#Cuenta ISR Retenido" />
+									</div>
+								</div>
+								
+								<!-- retencion_salarios -->
+								<div class="col-xs-12 form-group"> 
+									<label for="retencion_salarios" class="col-xs-4 control-label" style="padding: 0px;"><span class="naranja">*</span>Retención salarios:</label>
+									<div class="col-xs-8 sinPaddingRight">
+										<input type="text" id="retencion_salarios" name="retencion_salarios" class="form-control input-sm required" value=""  maxlength="30" placeholder="Retención salarios" />
+									</div>
+								</div>
+								
+								<!-- retencion_isr_honorarios -->
+								<div class="col-xs-12 form-group"> 
+									<label for="retencion_isr_honorarios" class="col-xs-4 control-label" style="padding: 0px;"><span class="naranja">*</span>Retención ISR honorarios:</label>
+									<div class="col-xs-8 sinPaddingRight">
+										<input type="text" id="retencion_isr_honorarios" name="retencion_isr_honorarios" class="form-control input-sm required" value=""  maxlength="30" placeholder="Retención ISR honorarios" />
+									</div>
+								</div>
+								
+								<!-- retencion_asimilados -->
+								<div class="col-xs-12 form-group"> 
+									<label for="retencion_asimilados" class="col-xs-4 control-label" style="padding: 0px;"><span class="naranja">*</span>Retención asimilados:</label>
+									<div class="col-xs-8 sinPaddingRight">
+										<input type="text" id="retencion_asimilados" name="retencion_asimilados" class="form-control input-sm required" value=""  maxlength="30" placeholder="Retención asimilados" />
+									</div>
+								</div>
+								
+								<!-- retencion_dividendos -->
+								<div class="col-xs-12 form-group"> 
+									<label for="retencion_dividendos" class="col-xs-4 control-label" style="padding: 0px;"><span class="naranja">*</span>Retención dividendos:</label>
+									<div class="col-xs-8 sinPaddingRight">
+										<input type="text" id="retencion_dividendos" name="retencion_dividendos" class="form-control input-sm required" value=""  maxlength="30" placeholder="Retención dividendos" />
+									</div>
+								</div>
+								
+								<!-- retencion_intereses -->
+								<div class="col-xs-12 form-group"> 
+									<label for="retencion_intereses" class="col-xs-4 control-label" style="padding: 0px;"><span class="naranja">*</span>Retencion intereses:</label>
+									<div class="col-xs-8 sinPaddingRight">
+										<input type="text" id="retencion_intereses" name="retencion_intereses" class="form-control input-sm required" value=""  maxlength="30" placeholder="Retencion intereses" />
+									</div>
+								</div>
+								
+								<!-- retencion_pagos_extranjero -->
+								<div class="col-xs-12 form-group"> 
+									<label for="retencion_pagos_extranjero" class="col-xs-4 control-label" style="padding: 0px;"><span class="naranja">*</span>Retención pagos al extranjero:</label>
+									<div class="col-xs-8 sinPaddingRight">
+										<input type="text" id="retencion_pagos_extranjero" name="retencion_pagos_extranjero" class="form-control input-sm required" value=""  maxlength="30" placeholder="Retención pagos al extranjero" />
+									</div>
+								</div>
+								
+								<!-- retencion_venta_acciones -->
+								<div class="col-xs-12 form-group"> 
+									<label for="retencion_venta_acciones" class="col-xs-4 control-label" style="padding: 0px;"><span class="naranja">*</span>Retención venta de acciones:</label>
+									<div class="col-xs-8 sinPaddingRight">
+										<input type="text" id="retencion_venta_acciones" name="retencion_venta_acciones" class="form-control input-sm required" value=""  maxlength="30" placeholder="Retención venta de acciones" />
+									</div>
+								</div>
+								
+								<!-- retencion_venta_partes_sociales -->
+								<div class="col-xs-12 form-group"> 
+									<label for="retencion_venta_partes_sociales" class="col-xs-4 control-label" style="padding: 0px;"><span class="naranja">*</span>Retención venta de partes sociales:</label>
+									<div class="col-xs-8 sinPaddingRight">
+										<input type="text" id="retencion_venta_partes_sociales" name="retencion_venta_partes_sociales" class="form-control input-sm required" value=""  maxlength="30" placeholder="Retención venta de partes sociales" />
+									</div>
+								</div>
+								
+								<!-- retencion_isr_arrendamiento -->
+								<div class="col-xs-12 form-group"> 
+									<label for="retencion_isr_arrendamiento" class="col-xs-4 control-label" style="padding: 0px;"><span class="naranja">*</span>Retención ISR arrendamiento:</label>
+									<div class="col-xs-8 sinPaddingRight">
+										<input type="text" id="retencion_isr_arrendamiento" name="retencion_isr_arrendamiento" class="form-control input-sm required" value=""  maxlength="30" placeholder="Retención ISR arrendamiento" />
+									</div>
+								</div>
+								
+								<!-- Perdida de Ejercicios Anteriores Enero y Febrero 1 año anterior -->
+								<div class="col-xs-12 form-group"> 
+									<label for="ejercicio_anterior_enero_febrero_1" class="col-xs-4 control-label" style="padding: 0px;"><span class="naranja">*</span>Perdida de Ejercicios Anteriores Enero y Febrero 1 año anterior:</label>
+									<div class="col-xs-8 sinPaddingRight">
+										<input type="text" id="ejercicio_anterior_enero_febrero_1" name="ejercicio_anterior_enero_febrero_1" class="form-control input-sm required" value=""  maxlength="20" />
+									</div>
+								</div>
+								
+								<!-- Perdida de Ejercicios Anteriores Enero y Febrero 2 años anteriores -->
+								<div class="col-xs-12 form-group"> 
+									<label for="ejercicio_anterior_enero_febrero_2" class="col-xs-4 control-label" style="padding: 0px;"><span class="naranja">*</span>Perdida de Ejercicios Anteriores Enero y Febrero 2 años anteriores:</label>
+									<div class="col-xs-8 sinPaddingRight">
+										<input type="text" id="ejercicio_anterior_enero_febrero_2" name="ejercicio_anterior_enero_febrero_2" class="form-control input-sm required" value=""  maxlength="20" />
+									</div>
+								</div>
+								
+								<!-- Perdida de Ejercicios Anteriores Enero 2 años anteriores -->
+								<div class="col-xs-12 form-group"> 
+									<label for="ejercicio_anterior_marzo_diciembre_1" class="col-xs-4 control-label" style="padding: 0px;"><span class="naranja">*</span>Perdida de Ejercicios Anteriores Marzo - Diciembre:</label>
+									<div class="col-xs-8 sinPaddingRight">
+										<input type="text" id="ejercicio_anterior_marzo_diciembre_1" name="ejercicio_anterior_marzo_diciembre_1" class="form-control input-sm required" value=""  maxlength="20" />
+									</div>
+								</div>
+								
+								<!-- Perdida de Ejercicios Anteriores Febrero 2 años anteriores -->
+								<!--
+								<div class="col-xs-12 form-group"> 
+									<label for="ejercicio_anterior_2_febrero" class="col-xs-4 control-label" style="padding: 0px;"><span class="naranja">*</span>Perdida de Ejercicios Anteriores Febrero 2 años anteriores:</label>
+									<div class="col-xs-8 sinPaddingRight">
+										<input type="text" id="ejercicio_anterior_2_febrero" name="ejercicio_anterior_2_febrero" class="form-control input-sm required" value=""  maxlength="20" placeholder="Perdida de Ejercicios Anteriores Febrero 2" />
+									</div>
+								</div>
+								-->
+								
+								<div class="col-xs-12 form-group"> 
+									<label for="tipo_empresa_id" class="col-xs-4 control-label" style="padding: 0px;">Tipo de empresa:</label>
+									<div class="col-xs-8 sinPaddingRight">
+									<select class="form-control input-sm required" name="tipo_empresa_id" id="tipo_empresa_id">
+										<option value="">Seleccione tipo de empresa</option>
+										<?php foreach ($this->tiposEmpresas as $te){ ?>
+											<option value="<?php echo $te->tipo_calculo; ?>"><?php echo $te->tipo_empresa; ?></option>
+										<?php } ?>
+									</select>
+									</div>
+								</div>
+								
+								<div class="col-xs-12 form-group"> 
+									<label for="status" class="col-xs-4 control-label" style="padding: 0px;"><span class="naranja">*</span>Estatus:</label>
+									<div class="col-xs-8 sinPaddingRight">
+										<select id="status" name="status" class="form-control required" <?php echo($this->puedeAgregar ? "" : 'disabled="disabled"'); ?>>
+											<option value="1">Activo</option>
+											<option value="0">Inactivo</option>
+										</select>
+									</div>
+								 </div>
+								
+								<div class="row sinMargin text-center">
+									<div class="col-xs-4 text-center mt40px">
+										<button type="button" onclick="guardar('frmEmpresa','/empresa/grid','/empresa/imprimir','/empresa/exportar');" class="col-xs-12 btn btn-success marginLat5p <?php echo(($this->puedeAgregar) ? "" : "hide"); ?>">
+											<i class="fa fa-floppy-o"></i>&nbsp;Guardar
+										</button>
+									</div>
+										
+									<div class="col-xs-4 text-center mt40px"> 
+										<button type="button" onclick="limpiarfrmEmpresa()" class="col-xs-12 btn btn-primary marginLat5p <?php echo(($this->puedeAgregar)?'':'hide'); ?>">
+											<i class="fa fa-eraser"></i>&nbsp;Limpiar
+										</button>
+									</div>
+									
+									<div class="col-xs-4 text-center mt40px">
+										<a onclick="eliminar('','1');" id="eliminar" class="col-xs-12 btn btn-danger  marginLat5p <?php echo(($this->puedeEliminar)?'':'hide'); ?>">
+											<i class="fa fa-times"></i>&nbsp;Eliminar
+										</a>
+									</div>
+									<input type="hidden" name="id" id="id" value="" />
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</form>
+</div>

@@ -1,0 +1,552 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"fun",
+				"fun	function …"
+			],
+			[
+				"ina",
+				"PDF_set_info_author"
+			],
+			[
+				"pla",
+				"plaza"
+			],
+			[
+				"Cliente",
+				"ClienteServicio"
+			],
+			[
+				"PLAZA",
+				"plaza"
+			],
+			[
+				"servicioPla",
+				"servicioPlazaTarifaespecial"
+			],
+			[
+				"ca",
+				"cadena"
+			],
+			[
+				"ser",
+				"servicioPlaza"
+			],
+			[
+				"estado",
+				"estado_actual"
+			],
+			[
+				"plaza",
+				"plaza_id"
+			],
+			[
+				"tot",
+				"total_costos_directos"
+			],
+			[
+				"recur",
+				"recurso"
+			],
+			[
+				"ta",
+				"tarifas"
+			],
+			[
+				"fecha",
+				"fecha_instalacion"
+			],
+			[
+				"v",
+				"val"
+			],
+			[
+				"Ge",
+				"GestionesGalerias"
+			],
+			[
+				"max",
+				"max-width"
+			],
+			[
+				"ges",
+				"gestion_id"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"di",
+				"disabled	Attr"
+			],
+			[
+				"el",
+				"eliminar"
+			],
+			[
+				"wi",
+				"width"
+			],
+			[
+				"docu",
+				"documentoId"
+			],
+			[
+				"font",
+				"font-size"
+			],
+			[
+				"ma",
+				"margin-top"
+			],
+			[
+				"sele",
+				"selected"
+			],
+			[
+				"con",
+				"consulta"
+			],
+			[
+				"SERV",
+				"Servicio"
+			],
+			[
+				"SER",
+				"SERVICIO"
+			],
+			[
+				"stat",
+				"status"
+			],
+			[
+				"Ordenes",
+				"ordenescambioservicioretira"
+			],
+			[
+				"ha",
+				"having"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"contents": "{\n    \"folders\":\n    [\n        {\n            \"follow_symlinks\": true,\n            \"path\": \"/Users/aparajita/Projects/SublimeLinter\"\n        }\n    ],\n    \"SublimeLinter\":\n    {\n        \"linters\":\n        {\n            \"flake8\": {\n                \"excludes\": [\n                    \"*/test/**\"\n                ],\n                \"ignore\": \"W\"\n            }\n        }\n    }\n}",
+			"file": "index.sublime-project",
+			"file_size": -1,
+			"file_write_time": -1,
+			"settings":
+			{
+				"buffer_size": 371,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 252.0,
+		"selected_items":
+		[
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: insta",
+				"Package Control: Install Package"
+			],
+			[
+				"sftp",
+				"Package Control: Satisfy Dependencies"
+			],
+			[
+				"Package Control: ftp",
+				"Package Control: Satisfy Dependencies"
+			],
+			[
+				"ftp",
+				"Preferences: Package Control Settings – Default"
+			]
+		],
+		"width": 528.0
+	},
+	"console":
+	{
+		"height": 340.0,
+		"history":
+		[
+			"clear",
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)",
+			"import urllib2,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); os.makedirs( ipp ) if not os.path.exists(ipp) else None; urllib2.install_opener( urllib2.build_opener( urllib2.ProxyHandler()) ); by = urllib2.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); open( os.path.join( ipp, pf), 'wb' ).write(by) if dh == h else None; print('Error validating download (got %s instead of %s), please try manual install' % (dh, h) if dh != h else 'Please restart Sublime Text to finish installation') ",
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by) "
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/Users/Fernando/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/C/Users/Fernando/AppData/Roaming/Sublime Text 3/Packages/SublimeLinter/Default (Windows).sublime-keymap",
+		"/C/xampp/htdocs/CursosPlatzi/platziFrontend/index.html",
+		"/C/xampp/htdocs/supertvDesarrollo/library/Zend/Locale/Data/ig_NG.xml",
+		"/C/xampp/htdocs/SertullDesarrollo/application/Instituciones.php",
+		"/C/xampp/htdocs/MenuOnDemand/core/fpdf/install.txt",
+		"/C/Users/Fernando/AppData/Roaming/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
+		"/C/Users/Fernando/AppData/Roaming/Sublime Text 3/Packages/SublimeCodeIntel/SublimeCodeIntel.sublime-settings",
+		"/C/Users/Fernando/AppData/Roaming/Sublime Text 3/Packages/User/SublimeCodeIntel.sublime-settings",
+		"/C/xampp/htdocs/onappafa/public/js/default/gestiones.js",
+		"/C/Users/Fernando/AppData/Roaming/Sublime Text 3/Packages/User/Emmet.sublime-settings",
+		"/C/xampp/htdocs/onappafa/application/modules/backend/views/scripts/engomado/agregar.phtml",
+		"/C/xampp/htdocs/onappafa/public/js/default/engomado.js",
+		"/C/xampp/htdocs/onappafa/application/modules/backend/views/scripts/engomado/index.phtml",
+		"/C/xampp/htdocs/onappafa/application/layouts/scripts/backend.phtml",
+		"/C/xampp/htdocs/onappafa/application/modules/backend/views/scripts/usuario/index.phtml",
+		"/C/xampp/htdocs/onappafa/application/modules/backend/views/scripts/usuario/agregar.phtml",
+		"/C/xampp/htdocs/onappafa/application/modules/backend/views/scripts/sucursal/agregar.phtml",
+		"/C/xampp/htdocs/onappafa/application/modules/backend/controllers/SucursalController.php",
+		"/C/xampp/htdocs/onappafa/application/modules/backend/views/scripts/sucursal/index.phtml",
+		"/C/xampp/htdocs/onappafa/application/modules/backend/views/scripts/gestiones/agregar.phtml",
+		"/C/xampp/htdocs/onappafa/application/modules/backend/views/scripts/gestiones/index.phtml",
+		"/C/xampp/htdocs/onappafa/application/models/Gestiones.php",
+		"/C/xampp/htdocs/onappafa/application/modules/backend/controllers/GestionesController.php",
+		"/C/xampp/htdocs/onappafa/application/modules/backend/controllers/EngomadoController.php",
+		"/C/xampp/htdocs/onappafa/application/models/generated/BaseGestiones.php",
+		"/C/xampp/htdocs/onappafa/application/models/generated/BaseEngomado.php",
+		"/C/xampp/htdocs/onappafa/public/js/default/noticias.js",
+		"/C/xampp/htdocs/onappafa/application/models/generated/BaseBanner.php",
+		"/C/xampp/htdocs/onappafa/application/models/generated/BaseNoticias.php",
+		"/C/xampp/htdocs/onappafa/application/models/generated/BaseBitacora.php",
+		"/C/xampp/htdocs/onappafa/application/models/generated/BaseSucursal.php",
+		"/C/xampp/htdocs/onappafa/application/models/generated/BaseUsuario.php",
+		"/C/xampp/htdocs/supertvDesarrollo/public/js/transacciones/ordenesinstalacion.js",
+		"/C/xampp/htdocs/supertvDesarrollo/application/modules/transacciones/controllers/OrdenesinstalacionController.php",
+		"/C/xampp/htdocs/supertvDesarrollo/application/models/generated/BaseCliente.php",
+		"/C/xampp/htdocs/supertvDesarrollo/application/models/generated/BaseOrdeninstalacion.php",
+		"/C/xampp/htdocs/supertvDesarrollo/application/models/generated/BaseClienteServicio.php",
+		"/C/xampp/htdocs/supertvDesarrollo/application/models/ServicioPlaza.php",
+		"/C/xampp/htdocs/supertvDesarrollo/application/models/Servicio.php",
+		"/C/xampp/htdocs/supertvDesarrollo/application/modules/transacciones/views/scripts/ordenesinstalacion/index.phtml",
+		"/C/xampp/htdocs/supertvDesarrollo/application/models/Usuario.php",
+		"/C/xampp/htdocs/supertvDesarrollo/application/models/Ordeninstalacion.php",
+		"/C/xampp/htdocs/supertvDesarrollo/application/modules/transacciones/controllers/OrdenescambioservicioinstalaController.php",
+		"/C/xampp/htdocs/clinica_sanacion/httpdocs/application/models/Sesion.php",
+		"/C/xampp/htdocs/supertvDesarrollo/application/models/Ordencambioservicio.php",
+		"/C/xampp/htdocs/supertvDesarrollo/application/modules/transacciones/controllers/OrdenescambioservicioretiraController.php",
+		"/C/xampp/htdocs/supertvDesarrollo/application/models/TarifaConceptoContratacion.php",
+		"/C/xampp/htdocs/supertvDesarrollo/public/js/transacciones/servicioplaza.js",
+		"/C/xampp/htdocs/supertvDesarrollo/application/modules/transacciones/views/scripts/servicioplaza/index.phtml",
+		"/C/xampp/htdocs/supertvDesarrollo/application/modules/transacciones/controllers/ServicioplazaController.php",
+		"/C/xampp/htdocs/supertvDesarrollo/public/css/principal.css",
+		"/C/xampp/htdocs/supertvDesarrollo/application/models/Plaza.php",
+		"/C/xampp/htdocs/supertvDesarrollo/application/models/ServicioPlazaTarifaespecial.php",
+		"/C/xampp/htdocs/supertvDesarrollo/application/modules/transacciones/views/scripts/clientes/index.phtml",
+		"/C/xampp/htdocs/appgricola/application/models/Configuracion.php",
+		"/C/xampp/htdocs/appgricola/application/modules/backend/controllers/ConfiguracionController.php",
+		"/C/xampp/htdocs/appgricola/application/modules/backend/views/scripts/configuracion/unidades-de-medida.phtml",
+		"/C/xampp/htdocs/supertvDesarrollo/public/css/multi-select.css",
+		"/C/xampp/htdocs/finpo_produccion/Nueva carpeta/application/layouts/scripts/layout.phtml",
+		"/C/xampp/htdocs/onappafa/application/modules/backend/controllers/UsuarioController.php",
+		"/C/xampp/htdocs/onappafa/application/modules/backend/views/scripts/usuario/permisos.phtml",
+		"/C/xampp/htdocs/onappafa/application/plugins/Default.php",
+		"/C/Users/Fernando/Desktop/Responsive Multipurpose HTML5 Website Template - Polygon/HTML/index.html",
+		"/C/Users/Fernando/Desktop/Responsive Multipurpose HTML5 Website Template - Polygon/HTML/index_business.html",
+		"/C/xampp/htdocs/onappafa/application/layouts/scripts/default.phtml",
+		"/C/xampp/htdocs/SertullDesarrollo/application/models/EfaProyecto.php",
+		"/C/Users/Fernando/Desktop/index.php",
+		"/C/xampp/htdocs/SertullDesarrollo/application/modules/transacciones/controllers/ReportesController.php",
+		"/C/xampp/htdocs/onappafa/application/configs/application.ini",
+		"/C/xampp/htdocs/finpo_produccion/sftp-config.json",
+		"/C/xampp/htdocs/SertullDesarrollo/application/models/EfaProyectoPresupuestoRecursosHumanos.php",
+		"/C/xampp/htdocs/SertullDesarrollo/application/models/EfaProyectoPresupuestoCostosDirectos.php",
+		"/C/xampp/htdocs/SertullDesarrollo/application/models/EfaProyectoPresupuestoCostosIndirectos.php",
+		"/C/xampp/htdocs/SertullDesarrollo/sftp-config.json",
+		"/C/xampp/htdocs/onappafa/application/views/scripts/index/index.phtml",
+		"/C/xampp/htdocs/appgricola/application/models/Fertilizacion.php",
+		"/C/xampp/htdocs/supertvDesarrollo/application/models/TarifaspromocionrecuperacionPlaza.php",
+		"/C/xampp/htdocs/supertvDesarrollo/application/modules/catalogos/views/scripts/tarifaspromocionrecuperacion/estado.phtml",
+		"/C/xampp/htdocs/supertvDesarrollo/public/js/catalogos/tarifaspromocionrecuperacion.js",
+		"/C/xampp/htdocs/supertvDesarrollo/application/modules/catalogos/views/scripts/tarifaspromocionrecuperacion/index.phtml",
+		"/C/xampp/htdocs/supertvDesarrollo/public/js/transacciones/ordenescambioservicioinstala.js",
+		"/C/xampp/htdocs/supertvDesarrollo/application/modules/catalogos/controllers/TarifaspromocionrecuperacionController.php",
+		"/C/xampp/htdocs/supertvDesarrollo/application/modules/transacciones/controllers/ClientesController.php",
+		"/C/xampp/htdocs/supertvDesarrollo/application/modules/transacciones/controllers/CobranzaController.php",
+		"/C/xampp/htdocs/onappafa/application/models/GestionesGalerias.php",
+		"/C/xampp/htdocs/supertvDesarrollo/application/models/Cliente.php",
+		"/C/xampp/htdocs/supertvDesarrollo/application/models/Cobranza.php",
+		"/C/xampp/htdocs/onappafa/public/css/backend.css",
+		"/C/xampp/htdocs/onappafa/library/My/Comun.php",
+		"/C/xampp/htdocs/onappafa/application/models/generated/BaseGestionesGalerias.php",
+		"/C/xampp/htdocs/MotivosInk/application/models/generated/BaseMedida.php",
+		"/C/xampp/htdocs/appgricola/application/layouts/scripts/backend.phtml",
+		"/C/xampp/htdocs/appgricola/application/plugins/Header.php",
+		"/C/xampp/htdocs/MotivosInk/application/modules/backend/views/scripts/medida/agregar.phtml",
+		"/C/xampp/htdocs/onappafa/application/models/GestionesGalerias.html",
+		"/C/xampp/htdocs/onappafa/application/modules/backend/views/scripts/noticias/agregar.phtml",
+		"/C/xampp/htdocs/onappafa/application/modules/backend/controllers/NoticiasController.php",
+		"/C/xampp/htdocs/onappafa/public/recursos/flexigrid/flexigrid.css",
+		"/C/xampp/htdocs/onappafa/application/modules/backend/views/scripts/noticias/index.phtml",
+		"/C/xampp/htdocs/onappafa/application/modules/backend/controllers/BannerController.php",
+		"/C/xampp/htdocs/onappafa/application/models/Noticias.php",
+		"/C/xampp/htdocs/onappafa/application/modules/backend/controllers/NoticiasController.html",
+		"/C/xampp/htdocs/onappafa/application/models/Banner.php",
+		"/C/xampp/htdocs/onappafa/application/modules/backend/views/scripts/banner/agregar.phtml",
+		"/C/xampp/htdocs/onappafa/application/models/Engomado.php",
+		"/C/xampp/htdocs/onappafa/public/js/default/banner.js",
+		"/C/xampp/htdocs/onappafa/application/modules/backend/views/scripts/banner/index.phtml",
+		"/C/xampp/htdocs/MotivosInk/application/models/generated/BaseBanner.php",
+		"/C/xampp/htdocs/MotivosInk/application/models/Banner.php",
+		"/C/xampp/htdocs/MotivosInk/application/modules/backend/controllers/BannerController.php",
+		"/C/xampp/htdocs/MotivosInk/application/modules/backend/controllers/MedidaController.php",
+		"/C/xampp/htdocs/MotivosInk/application/modules/backend/controllers/PedidoController.php",
+		"/C/xampp/htdocs/onappafa/public/js/default/usuario.js",
+		"/C/xampp/htdocs/onappafa/public/css/comun.css",
+		"/C/xampp/htdocs/onappafa/public/recursos/bootstrap/bootstrap.css",
+		"/C/xampp/htdocs/onappafa/application/modules/backend/controllers/EgomadoController.php",
+		"/C/xampp/htdocs/onappafa/application/layouts/scripts/ingreso.phtml",
+		"/C/xampp/htdocs/onappafa/application/modules/backend/views/scripts/usuario/mis-datos.phtml",
+		"/C/xampp/htdocs/onappafa/application/models/generated/BaseEngomado.html",
+		"/C/xampp/htdocs/onappafa/application/modules/backend/controllers/BitacoraController.php",
+		"/C/xampp/htdocs/onappafa/public/js/default/comun.js",
+		"/C/xampp/htdocs/onappafa/application/modules/backend/views/scripts/ingreso/recupera.phtml",
+		"/C/xampp/htdocs/onappafa/application/modules/backend/views/scripts/bitacora/index.phtml",
+		"/C/xampp/htdocs/onappafa/public/js/default/bitacora.js",
+		"/C/xampp/htdocs/onappafa/application/views/scripts/usuario/agregar.phtml",
+		"/C/xampp/htdocs/clinica_sanacion/httpdocs/application/layouts/scripts/default.phtml",
+		"/C/xampp/htdocs/clinica_sanacion/httpdocs/application/layouts/scripts/ingreso.phtml"
+	],
+	"find":
+	{
+		"height": 26.0
+	},
+	"find_in_files":
+	{
+		"height": 90.0,
+		"where_history":
+		[
+			"C:\\xampp\\htdocs\\SertullDesarrollo",
+			"C:\\xampp\\htdocs\\SertullDesarrollo\\public\\js",
+			"C:\\xampp\\htdocs\\MenuOnDemand",
+			"C:\\xampp\\htdocs\\MenuOnDemand\\js"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"olss",
+			"contenedorPlazasTarifas",
+			"catch",
+			"boton",
+			"10a9ff",
+			"55fb76",
+			"f7921e",
+			"position: \"center\"",
+			"position: \"center\",",
+			"tipo",
+			"guardar",
+			"FIPterminar",
+			"FMguardar",
+			"recursosolss",
+			"recursos",
+			"proyectooss",
+			"proyectosososs",
+			"SEGUI",
+			"DICTAMINACIONES",
+			"n obtener",
+			"obtener",
+			"actualizar",
+			"selecteda",
+			"menu",
+			"BtncopiadeModelo_operacion",
+			"CopiaTotalModelo",
+			"$.ajax{setup",
+			"setup",
+			"ajax_setup",
+			"CopiaModeloPaquetes",
+			"tipoOperacion",
+			"CallbackCopiaModeloPaquetes",
+			"function Select",
+			"Select",
+			"selected_agencia",
+			"CallbackCopiaModeloPaquetes",
+			"CopiaModeloPaquetes",
+			"CopiaTotalModelo",
+			"campos_menu_kilometrajemodelo",
+			"menu_kilometrajemodelo_idMenu",
+			"campos_menu_kilometrajemodelo",
+			"CopiaTotalModelo",
+			"BtncopiadeModelo_operacion",
+			"corte",
+			"guardarbaja",
+			"SuperIngreso",
+			"ingreso",
+			"FILEINPUTMARCA",
+			"FLASHVER.SPLIT",
+			"FLASHVER",
+			"jquery.faccybox.css",
+			"SALIR()",
+			"SALIR",
+			"rutaima",
+			"administracion",
+			"inicio"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "index.sublime-project",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 371,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								353,
+								217
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/JavaScript/JSON.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 26.0
+	},
+	"input":
+	{
+		"height": 34.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.sftp":
+	{
+		"height": 0.0
+	},
+	"project": "index.sublime-project",
+	"replace":
+	{
+		"height": 48.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 332.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

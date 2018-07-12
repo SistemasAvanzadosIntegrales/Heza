@@ -1,0 +1,113 @@
+<div class="panel panel-default" style="margin: 5px 0;">
+	<div class="pnl-heading-rojo-1 clearfix"><h3 class="panel-title pull-left">Coeficiente de acreditamiento</h3></div>
+	
+	<form id="frmCoeficiente" name="frmCoeficiente" method="post" action="/coeficiente-acre/guardar" role="form">
+		<div class="panel-body">
+			<div class="row margin-bottom-3">
+				<div class="col-xs-7 sinMargin">
+					<div class="pnl-heading-rojo-1 clearfix"><h3 class="panel-title text-center">Coeficientes</h3></div>
+					<div id="flexigrid"></div>
+				</div>
+				
+				<div class="col-xs-5 sinPaddingLeft">
+					<div class="panel panel-default" >
+						<div class="pnl-heading-rojo-1 clearfix">
+							<h3 class="panel-title pull-left">Alta / Edición de coeficientes</h3>
+						</div>
+						<div class="panel-body">
+							<div class="row margin-bottom-3">
+								<div class="col-xs-12 form-group"> 
+									<label for="id_empresa" class="col-xs-4 control-label" style="padding: 0px;"><span class="naranja">*</span>Empresa:</label>
+									<div class="col-xs-8 sinPaddingRight">
+										<select name='id_empresa' id='id_empresa' class='form-control input-sm'>
+											<option>Seleccione Empresa</option>
+										</select>
+									</div>
+								</div>
+								
+								<div class="col-xs-12 form-group"> 
+									<label for="id_ejercicio" class="col-xs-4 control-label" style="padding: 0px;"><span class="naranja">*</span>Ejercicio:</label>
+									<div class="col-xs-8 sinPaddingRight">
+										<select name='id_ejercicio' id='id_ejercicio' class='form-control input-sm'>
+											<option>Seleccione Ejercicio</option>
+										</select>
+									</div>
+								</div>
+								
+								<div class="col-xs-12 form-group"> 
+									<label for="id_periodo_inicio" class="col-xs-4 control-label" style="padding: 0px;"><span class="naranja">*</span>Periodo de inicio:</label>
+									<div class="col-xs-8 sinPaddingRight">
+										<select name='id_periodo_inicio' id='id_periodo_inicio' class='form-control input-sm'>
+											<option>Seleccione periodo de inicio</option>
+											<option value="1">Enero</option>
+											<option value="2">Febrero</option>
+											<option value="3">Marzo</option>
+											<option value="4">Abril</option>
+											<option value="5">Mayo</option>
+											<option value="6">Junio</option>
+											<option value="7">Julio</option>
+											<option value="8">Agosto</option>
+											<option value="9">Septiembre</option>
+											<option value="10">Octubre</option>
+											<option value="11">Noviembre</option>
+											<option value="12">Diciembre</option>
+										</select>
+									</div>
+								</div>
+								
+								<div class="col-xs-12 form-group"> 
+									<label for="id_periodo_fin" class="col-xs-4 control-label" style="padding: 0px;"><span class="naranja">*</span>Periodo de fin:</label>
+									<div class="col-xs-8 sinPaddingRight">
+										<select name='id_periodo_fin' id='id_periodo_fin' class='form-control input-sm'>
+											<option>Seleccione periodo de inicio</option>
+											<option value="1">Enero</option>
+											<option value="2">Febrero</option>
+											<option value="3">Marzo</option>
+											<option value="4">Abril</option>
+											<option value="5">Mayo</option>
+											<option value="6">Junio</option>
+											<option value="7">Julio</option>
+											<option value="8">Agosto</option>
+											<option value="9">Septiembre</option>
+											<option value="10">Octubre</option>
+											<option value="11">Noviembre</option>
+											<option value="12">Diciembre</option>
+										</select>
+									</div>
+								</div>
+								
+								<div class="col-xs-12 form-group"> 
+									<label for="coeficiente_acreditamiento" class="col-xs-4 control-label" style="padding: 0px;"><span class="naranja">*</span>Coeficiente de acreditamiento:</label>
+									<div class="col-xs-8 sinPaddingRight">
+										<input type="text" id="coeficiente_acreditamiento" name="coeficiente_acreditamiento" class="form-control input-sm required" value=""  maxlength="30" placeholder="Coeficiente de acreditamiento" />
+									</div>
+								</div>
+								
+								<div class="row sinMargin text-center">
+									<div class="col-xs-4 text-center mt40px">
+										<button type="button" onclick="guardar('frmCoeficiente','/coeficiente-acre/grid','/coeficiente-acre/imprimir','/coeficiente-acre/exportar');" class="col-xs-12 btn btn-success marginLat5p <?php echo(($this->puedeAgregar) ? "" : "hide"); ?>">
+											<i class="fa fa-floppy-o"></i>&nbsp;Guardar
+										</button>
+									</div>
+										
+									<div class="col-xs-4 text-center mt40px"> 
+										<button type="button" onclick="limpiarfrmCoeficiente()" class="col-xs-12 btn btn-primary marginLat5p <?php echo(($this->puedeAgregar)?'':'hide'); ?>">
+											<i class="fa fa-eraser"></i>&nbsp;Limpiar
+										</button>
+									</div>
+									
+									<div class="col-xs-4 text-center mt40px">
+										<a onclick="eliminar('', '1');" id="eliminar" class="col-xs-12 btn btn-danger  marginLat5p <?php echo(($this->puedeEliminar)?'':'hide'); ?>">
+											<i class="fa fa-times"></i>&nbsp;Eliminar
+										</a>
+									</div>
+									<input type="hidden" name="id" id="id" value="" />
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</form>
+</div>

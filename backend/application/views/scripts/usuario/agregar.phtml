@@ -1,0 +1,51 @@
+<div id="es-1" name="es-1" class="alert alert-success hide" style="padding-bottom: 0;" role="alert">
+    Espere un momento, por favor...
+    <div class="progress">
+        <div class="progress-bar progress-bar-success progress-bar-striped active"  role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+            <span class="sr-only">100% Completo</span>
+        </div>
+    </div>
+</div>
+
+<form id="frm1" name="frm1" class="form-horizontal" method="post" action="/usuario/guardar" role="form" enctype="multipart/form-data">    
+    <br/>  
+
+    <div class="col-xs-12 form-group"> 
+        <label for="nombre" class="col-xs-2 control-label"><span class="naranja">*</span>Nombre:</label>
+        <div class="col-xs-4">
+            <input type="text" id="nombre" name="nombre" class="form-control input-sm required" value="<?php echo $this->registro->nombre ?>"  maxlength="100" placeholder="Nombre" />
+        </div>
+
+        <label for="correo_electronico" class="col-xs-1 control-label"><span class="naranja">*</span>E-mail:</label>
+        <div class="col-xs-4">
+            <input type="text" id="correo_electronico" name="correo_electronico" class="form-control input-sm required email" value="<?php echo $this->registro->correo_electronico ?>"  maxlength="50" placeholder="E-mail" />
+        </div>
+    </div>  
+    
+   
+       
+    <div class="col-xs-12 form-group mb40px"> 
+        <label for="contrasena" class="col-xs-2 control-label"><span class="naranja">*</span>Contraseña:</label>
+        <div class="col-xs-4">
+            <input type="text" id="contrasena" name="contrasena" class="form-control input-sm required" value="<?php echo $this->registro->contrasena ?>" maxlength="12" minlength="2" placeholder="Contraseña" />
+        </div>
+        <label for="status" class="col-xs-1 control-label"><span class="naranja"></span>Status:</label>
+        <div class="col-xs-4">
+                <select id="status" name="status" class="form-control input-sm">
+                    <option value="1" selected>Habilitado</option>
+                    <option value="0" >Deshabilitado</option>
+                </select>
+        </div>
+
+    </div>
+
+    <br>    
+    
+    <div class="col-xs-12 text-right"> 
+    <input type="hidden" name="id" id="id" value="<?php echo $this->registro->id; ?>" /> <!-- cuando no es nuevo -->
+    <button class="btn btn-rojo-1" onclick="guardar('frm1','frmFiltrosUsuario','/usuario/grid','/usuario/imprimir','/usuario/exportar');" type="button" ><i class="fa fa-check-circle"></i> Aceptar</button>
+    <button class="btn btn-rojo-1" onclick="cancelar();" type="button" ><i class="fa fa-times-circle"></i> Cancelar</button>
+    </div>
+    <br/><br/><br/>  
+
+</form>
