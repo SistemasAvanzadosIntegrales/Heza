@@ -306,20 +306,20 @@ class PagoProvisionalpmController extends Zend_Controller_Action {
 		$remanente  = 0;
 		$ejercicio_ = My_Comun::obtener("Ejercicio", "id", $ejercicio);
 		
-		for($i = 1; $i <= 12; $i++){
+		for($i = 1; $i <= 12; $i++) {
 			$sql = "
 				    SELECT round(SUM(sc.Importes".$i."), 2)
 						   FROM SaldosCuentas sc
 				INNER JOIN Cuentas c
-						   ON sc.IdCuenta = c.Id 
-				INNER JOIN AgrupadoresSAT a 
+						   ON sc.IdCuenta = c.Id
+				INNER JOIN AgrupadoresSAT a
 						   ON c.IdAgrupadorSAT = a.Id
 					 WHERE (a.Codigo = '110.01') OR (a.Codigo = '113.06')
 						   AND sc.Ejercicio = (SELECT Id FROM Ejercicios WHERE Ejercicio = '".$ejercicio_->nombre."')
 						   AND sc.Tipo = '3'";
 				
-				$query = sqlsrv_query($cnx, $sql) OR print_r(sqlsrv_errors());
-				$query = sqlsrv_fetch_array($query);
+			$query = sqlsrv_query($cnx, $sql) OR print_r(sqlsrv_errors());
+			$query = sqlsrv_fetch_array($query);
 			
 			$remanente       += $query[0];
 			$aplicacion       = $this->obtenerAplicacionesPeriodo($empresa, $ejercicio, $i);
@@ -327,7 +327,7 @@ class PagoProvisionalpmController extends Zend_Controller_Action {
 			$isr_compensacion = $this->get_isr_compensaciones($empresa, $ejercicio, $i);
 			$remanente       -= $isr_compensacion;
 			$iva_compensacion = $this->get_iva_compensaciones($empresa, $ejercicio, $i);
-			$remanente       -= $isr_compensacion;
+			$remanente       -= $iva_compensacion;
 		}
 		
 		sqlsrv_close($cnx);
@@ -381,15 +381,16 @@ class PagoProvisionalpmController extends Zend_Controller_Action {
 		          FROM impuesto_periodo_pm 
 				 WHERE id_empresa = ".$empresa."
 				       AND id_ejercicio = ".$ejercicio."
+               AND status = '0'
 				       LIMIT 1";
 		
 		$periodo = My_Comun::crearQuery(null, $sql);
 		
-		if($monto[0]['periodo'] == 0){
+		if($monto[0]['periodo'] == 0) {
 			$periodo = 1;
 		}
 		else {
-			if($monto[0]['periodo'] == 12){
+			if($monto[0]['periodo'] == 12) {
 				echo 3;
 			}
 			else {
@@ -685,7 +686,7 @@ class PagoProvisionalpmController extends Zend_Controller_Action {
 					echo   "<td></td>
 						</tr>";
 				echo   "<tr>
-							<td><span class='operator-pm less'>-</span>Anticipos o Rendimentos Distribuidos</td>";
+							<td><span class='operator-pm less'>-</span>Anticipos o Rendimientos Distribuidos</td>";
 							for( $i = 1; $i <= 12; $i++ ) {
 					echo   "<td>".number_format($registro[$i]['isr_anticipos_distribuidos'], 2)."</td>";
 							}
@@ -1879,7 +1880,7 @@ class PagoProvisionalpmController extends Zend_Controller_Action {
 			        AND ejercicio_id  = ".$ejercicio."
 			        AND periodo       = ".$periodo."
 			        AND tipo_impuesto = 'IVA'";
-		
+
 		$monto   = My_Comun::crearQuery('Aplicaciones', $query);
 		
 		$monto = ($monto[0]['monto']) ? $monto[0]['monto'] : 0;
@@ -2223,6 +2224,7 @@ class PagoProvisionalpmController extends Zend_Controller_Action {
 		$iva_favor_periodo_before  = 0;
 		$iva_compensaciones_before = 0;
 		$iva_favor_acumulado       = 0;
+    $result                    = 0;
 		
 		$iva_favor_periodo = $this->get_iva_favor_periodo($empresa, $ejercicio, $periodo);
 		
@@ -2254,7 +2256,9 @@ class PagoProvisionalpmController extends Zend_Controller_Action {
 			
 			$iva_favor_acumulado = $iva_favor_periodo_before - $iva_compensaciones_before;
 			
-			return $iva_favor_acumulado + $iva_favor_periodo - $iva_compensaciones;
+      $result = $iva_favor_acumulado + $iva_favor_periodo - $iva_compensaciones;
+
+			return abs($result);
 		}
 	}
 	
@@ -2738,6 +2742,7 @@ class PagoProvisionalpmController extends Zend_Controller_Action {
 		
 		$conexion      = My_Comun::obtener("Empresa", "id", $empresa);
 		$ejercicio_obj = My_Comun::obtener("Ejercicio", "id", $ejercicio);
+    $total         = 0;
 		
 		//Conexion
 		$cnx = Conexion::abreConexion($conexion->usuario_bd_contpaq, $conexion->pass_bd_contpaq, $conexion->nombre_bd_contpaq, $conexion->server_bd_contpaq);
@@ -2753,7 +2758,7 @@ class PagoProvisionalpmController extends Zend_Controller_Action {
 			$ImpuestoPeriodoPm = My_Comun::obtenerFiltro("ImpuestoPeriodoPm", $filtro, "id_periodo ASC");
 			
 			// SQL
-			$sql = "SELECT ISNULL(SUM(m.Importe), '0') AS average
+			$sql = "SELECT m.Importe AS average
 			          FROM MovimientosPoliza m 
 			    INNER JOIN Cuentas c 
 			               ON m.IdCuenta = c.Id 
@@ -2765,28 +2770,85 @@ class PagoProvisionalpmController extends Zend_Controller_Action {
 			               AND m.Periodo = '".$i."'";
 			
 			$query = sqlsrv_query($cnx, $sql) OR print_r(sqlsrv_errors());
-			$query = sqlsrv_fetch_array($query);
-			
+			// $query = sqlsrv_fetch_array($query);
+
+      if( $query === false) {
+        die( print_r( sqlsrv_errors(), true) );
+      }
+
+      while( $row = sqlsrv_fetch_array( $query, SQLSRV_FETCH_ASSOC) ) {
+        // $total += $this->get_asimilados_salarios($row['average']);
+        $total += $row['average'];
+        // echo "<pre>";
+        // print_r($this->get_asimilados_salarios($row['average']));
+        // echo "</pre>";
+      }
+
 			// Actualizar campo de la base d edatos.
 			$data                 = array();
 			$data['id']           = $ImpuestoPeriodoPm[0]->id;
 			$data['id_empresa']   = $empresa;
 			$data['id_ejercicio'] = $ejercicio;
 			$data['id_periodo']   = $i;
-			$data['isr_anticipos_distribuidos'] = $query['average'];
+			$data['isr_anticipos_distribuidos'] = $total;
 			
 			if ($ImpuestoPeriodoPm[0]->id) {
 				My_Comun::Guardar("ImpuestoPeriodoPm", $data, $data['id'], "");
 			}
 		}
-		
-		echo "<pre>";
-		print_r('isr_anticipos_distribuidos Actualizado correctamente');
-		echo "</pre>";
-		
+
 		sqlsrv_close($cnx);
 	}
 	
+  /**
+   * @function     get_asimilados_salarios
+   * @author:      Danny Ramirez
+   * @contact:     danny_ramirez@avansys.com.mx
+   * @description: 
+   * @version:     1.0
+   * @copyright:   Avansys
+   **/
+  public function get_asimilados_salarios($monto) {
+
+    $this->_helper->layout->disableLayout();
+    $this->_helper->viewRenderer->setNoRender(TRUE);
+    
+    //Obtener Limite inferior
+    $query = "
+      SELECT DISTINCT *
+             FROM tabla_asimilados
+            WHERE '".$monto."' BETWEEN limite_inferior AND limite_superior";
+      
+    $query = My_Comun::crearQuery(null, $query);
+
+    $limite_inferior = $query[0]['limite_inferior'];
+    $limite_superior = $query[0]['limite_superior'];
+    $cuota_fija      = $query[0]['cuota_fija'];
+    $porcentaje      = $query[0]['porcentaje'];
+
+    return $resultado = number_format($this->PMT( $porcentaje, 1, $monto), 2);
+  }
+
+  /**
+   * @function     PMT
+   * @author:      Danny Ramirez
+   * @contact:     danny_ramirez@avansys.com.mx
+   * @description: PMT Function for goal seek formula 
+   * @version:     1.0
+   * @copyright:   Avansys
+   *
+   * PMT = (PV(1+i)^n) + FV)i
+   *      -------------------
+   *            1-(1 + i)^n
+   *
+   * $i = annual interest rate
+   * $n = total months
+   * $p = total loan amount (Principle Amount)
+   **/
+  public function PMT($i, $n, $p) {
+    return $i * $p * pow((1 + $i),$n) / (1 - pow((1 + $i), $n));
+  }
+  
 	/**
 	 * @function     isr_deduccion_inversiones
 	 * @author:      Danny Ramirez
@@ -2898,7 +2960,7 @@ class PagoProvisionalpmController extends Zend_Controller_Action {
 			$data['id_empresa']   = $empresa;
 			$data['id_ejercicio'] = $ejercicio;
 			$data['id_periodo']   = $i;
-			$data['isr_ptu_pagada'] = $query['average'];
+			$data['isr_ptu_pagada'] = $query['monto'];
 			
 			if ($ImpuestoPeriodoPm[0]->id) {
 				My_Comun::Guardar("ImpuestoPeriodoPm", $data, $data['id'], "");

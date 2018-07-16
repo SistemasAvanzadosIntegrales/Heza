@@ -13,8 +13,8 @@
 					<tr>
 						<td class="text-center col-xs-3"><?php echo utf8_encode($this->impuesto->nombre); ?></td>
 						<td class="text-center col-xs-3"><?php echo $this->tipo; ?></td>
-						<td class="text-center col-xs-2"><?php echo number_format($this->remanente, 2); ?></td>
-						<td class="text-center col-xs-2"><?php echo $this->monto; ?></td>
+						<td class="text-center col-xs-2">$<?php echo number_format($this->remanente, 2); ?></td>
+						<td class="text-center col-xs-2">$<?php echo $this->monto; ?></td>
 						<td class="text-center col-xs-2">
 							<input name="monto" id="monto" type="text" class="form-control input-sm required" value="<?php echo $this->monto; ?>">
 						</td>

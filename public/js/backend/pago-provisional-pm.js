@@ -283,6 +283,7 @@ function cargaContent ( formulario, urlImprimir, urlExportar ) {
 				data: { id_empresa : empresa, 
 						id_ejercicio : ejercicio },
 				success:function( data ){
+          console.log(data);
 					$( "#remanente" ).val(data);
 				},
 				error: function ( error ){
@@ -298,26 +299,27 @@ function cargaContent ( formulario, urlImprimir, urlExportar ) {
 				url: "/pago-provisionalpm/obtener-compensacion-status",
 				data: { id_empresa : empresa, 
 						id_ejercicio : ejercicio },
-				success:function( data ){
-					if(data == 2){
+				success:function( data ) {
+
+          //Si es que ya se aplico el impuesto de ISR o IVA
+					if(data == 1 || data == 2) {
 						//Script de aplicaciones
 						aplicar_impuesto();
-					}
-					else if (data == 3) {
+					} 
+					else if (data == 3) {  //Cuando ya todos los periodos estan congelados
 						_mensaje("#_mensaje-1", "Estan congelados todos los periodos, por lo que no hay impuestos que aplicar.");
 					}
-					else {
-						_mensaje("#_mensaje-1", "Faltan compensaciones por dar de alta antes de poder aplicar impuestos.");
+					else { //Cuando no se aplicado ningún impuesto de IVA o ISR
+						_mensaje("#_mensaje-1", "Faltan compensaciones ISR o IVA por dar de alta antes de poder aplicar impuestos.");
 					}
 				},
-				error: function ( error ){
+				error: function ( error ) {
 					_mensaje("#_mensaje-1", "Ocurri&oacute; un error inesperado al cargar pagos");
 					$('.filtros a').toggleClass('disabled', false);
 				}
 			});
 		},
-		error: function ( error ){
-			
+		error: function ( error ) {
 			_mensaje("#_mensaje-1", "Ocurri&oacute; un error inesperado al cargar pagos");
 			$('.filtros a').toggleClass('disabled', false);
 		}
@@ -542,7 +544,7 @@ function aplicar_impuesto() {
 	
 	var $index = $("#impuestos").index();
 	var column = $( "td:nth-child("+($index + 1)+")*[id]" );
-	
+
 	/**
 	 * To follow a hierarchy
 	 */

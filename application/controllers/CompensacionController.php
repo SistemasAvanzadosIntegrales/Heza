@@ -212,9 +212,8 @@ class CompensacionController extends Zend_Controller_Action {
 		$ejercicio_ = My_Comun::obtener("Ejercicio", "id", $ejercicio);
 		
 		for($i = 1; $i <= 12; $i++){
-			
 			$sql = "
-				    SELECT SUM(sc.Importes".$i.")
+				    SELECT round(SUM(sc.Importes".$i."), 2)
 						   FROM SaldosCuentas sc
 				INNER JOIN Cuentas c
 						   ON sc.IdCuenta = c.Id 
@@ -227,17 +226,43 @@ class CompensacionController extends Zend_Controller_Action {
 			$query = sqlsrv_query($cnx, $sql) OR print_r(sqlsrv_errors());
 			$query = sqlsrv_fetch_array($query);
 			
-			$remanente += $query[0];
+			$remanente       += $query[0];
+      $aplicacion       = $this->obtenerAplicacionesPeriodo($empresa, $ejercicio, $i);
+      $remanente       -= $aplicacion;
 			$isr_compensacion = $this->get_isr_compensaciones($empresa, $ejercicio, $i);
 			$remanente       -= $isr_compensacion;
 			$iva_compensacion = $this->get_iva_compensaciones($empresa, $ejercicio, $i);
 			$remanente       -= $iva_compensacion;
 		}
 		
-		sqlsrv_close($cnx);
-		
-		echo round($remanente, 2);
+    sqlsrv_close($cnx);
+    
+    echo $remanente;
 	}
+  
+  /**
+   * @function     obtenerAplicacionesPeriodo
+   * @author:      
+   * @contact:     
+   * @description: 
+   * @version:     1.0
+   * @path call:   subsidio-empleo/index.phtml
+   * @copyright:   Avansys
+   **/
+  public function obtenerAplicacionesPeriodo ($empresa, $ejercicio, $periodo) {
+    
+    $query = 
+      "SELECT SUM(monto) AS monto 
+         FROM aplicaciones 
+        WHERE empresa_id   = ".$empresa."
+              AND ejercicio_id = ".$ejercicio."
+              AND periodo_id   = ".$periodo."";
+    
+    $monto = My_Comun::crearQuery('Aplicaciones', $query);
+    $monto = ($monto[0]['monto']) ? $monto[0]['monto'] : 0;
+    
+    return $monto;
+  }
 	
 	/**
 	 * @function     get_isr_compensaciones

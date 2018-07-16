@@ -78,7 +78,7 @@ class SubsidioEmpleoController extends Zend_Controller_Action {
 		
 		for($i = 1; $i <= 12; $i++){
 			$sql = "
-				    SELECT SUM(sc.Importes".$i.")
+				    SELECT round(SUM(sc.Importes".$i."), 2)
 						   FROM SaldosCuentas sc
 				INNER JOIN Cuentas c
 						   ON sc.IdCuenta = c.Id 
@@ -91,10 +91,20 @@ class SubsidioEmpleoController extends Zend_Controller_Action {
 				$query = sqlsrv_query($cnx, $sql) OR print_r(sqlsrv_errors());
 				$query = sqlsrv_fetch_array($query);
 			
-			$data[$i]['periodo']   = $meses[$i];
-			$data[$i]['monto']     = $query[0];
-			$data[$i]['remanente'] = $query[0];
-			$remanente            += $query[0];
+			$data[$i]['periodo']    = $meses[$i];
+			$data[$i]['monto']      = $query[0];
+			$data[$i]['remanente'] += $query[0];
+        
+      // $query = sqlsrv_query($cnx, $sql) OR print_r(sqlsrv_errors());
+      // $query = sqlsrv_fetch_array($query);
+      
+      // $remanente       += $query[0];
+      // $aplicacion       = $this->obtenerAplicacionesPeriodo($empresa, $ejercicio, $i);
+      // $remanente       -= $aplicacion;
+      // $isr_compensacion = $this->get_isr_compensaciones($empresa, $ejercicio, $i);
+      // $remanente       -= $isr_compensacion;
+      // $iva_compensacion = $this->get_iva_compensaciones($empresa, $ejercicio, $i);
+      // $remanente       -= $iva_compensacion;
 		}
 		
 		sqlsrv_close($cnx);
@@ -191,7 +201,7 @@ class SubsidioEmpleoController extends Zend_Controller_Action {
 		
 		for($i = 1; $i <= 12; $i++){
 			$sql = "
-				    SELECT SUM(sc.Importes".$i.")
+				    SELECT round(SUM(sc.Importes".$i."), 2)
 						   FROM SaldosCuentas sc
 				INNER JOIN Cuentas c
 						   ON sc.IdCuenta = c.Id 
@@ -201,26 +211,46 @@ class SubsidioEmpleoController extends Zend_Controller_Action {
 						   AND sc.Ejercicio = (SELECT Id FROM Ejercicios WHERE Ejercicio = '".$ejercicio_->nombre."')
 						   AND sc.Tipo = '3'";
 				
-				$query = sqlsrv_query($cnx, $sql) OR print_r(sqlsrv_errors());
-				$query = sqlsrv_fetch_array($query);
+			$query = sqlsrv_query($cnx, $sql) OR print_r(sqlsrv_errors());
+			$query = sqlsrv_fetch_array($query);
 			
-			$remanente += $query[0];
+			$remanente       += $query[0];
+      $aplicacion       = $this->obtenerAplicacionesPeriodo($empresa, $ejercicio, $i);
+      $remanente       -= $aplicacion;
 			$isr_compensacion = $this->get_isr_compensaciones($empresa, $ejercicio, $i);
 			$remanente       -= $isr_compensacion;
 			$iva_compensacion = $this->get_iva_compensaciones($empresa, $ejercicio, $i);
-			$remanente       -= $isr_compensacion;
+			$remanente       -= $iva_compensacion;
 		}
 		
 		sqlsrv_close($cnx);
 		
-		$consulta = "select sum(monto_aplicar) as compensaciones_tot from compensacion where periodo in 
-					(select id_periodo from impuesto_periodo_pm where id_empresa='".$empresa."' and id_ejercicio='".$ejercicio."' and `status`=1)";
-		
-		$regs = My_Comun::crearQuery('Compensacion',$consulta);
-		$remanente -=($regs[0]['compensaciones_tot']);
-		
-		echo round($remanente, 2);
+		echo $remanente;
 	}
+
+  /**
+   * @function     obtenerAplicacionesPeriodo
+   * @author:      
+   * @contact:     
+   * @description: 
+   * @version:     1.0
+   * @path call:   subsidio-empleo/index.phtml
+   * @copyright:   Avansys
+   **/
+  public function obtenerAplicacionesPeriodo ($empresa, $ejercicio, $periodo) {
+    
+    $query = 
+      "SELECT SUM(monto) AS monto 
+         FROM aplicaciones 
+        WHERE empresa_id   = ".$empresa."
+              AND ejercicio_id = ".$ejercicio."
+              AND periodo_id   = ".$periodo."";
+    
+    $monto = My_Comun::crearQuery('Aplicaciones', $query);
+    $monto = ($monto[0]['monto']) ? $monto[0]['monto'] : 0;
+    
+    return $monto;
+  }
 	
 	/**
 	 * @function     get_isr_compensaciones
